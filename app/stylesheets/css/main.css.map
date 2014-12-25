@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";;;;AACE,IAAK;ECQC,kBAAoB,EDPJ,UAAU;ECY1B,eAAiB,EDZD,UAAU;EC2B1B,UAAY,ED3BI,UAAU;;AAI9B,oBAAqB;ECGjB,kBAAoB,EDFF,OAAO;ECOzB,eAAiB,EDPC,OAAO;ECsBzB,UAAY,EDtBM,OAAO",
+"sources": ["../../../../../../../Users/Abdullah-Mac/code/angular-projects/macro-fitness-tracker/node_modules/node-neat/assets/stylesheets/grid/_box-sizing.scss","../../../../../../../Users/Abdullah-Mac/code/angular-projects/macro-fitness-tracker/node_modules/node-bourbon/assets/stylesheets/addons/_prefixer.scss"],
+"names": [],
+"file": "main.css"
+}

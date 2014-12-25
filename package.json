@@ -31,6 +31,7 @@
     "morgan": "^1.5.0",
     "node-bourbon": "^1.2.3",
     "node-neat": "^1.4.2",
+    "nodemon": "^1.2.1",
     "serve-static": "^1.7.1"
   }
 }

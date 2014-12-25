@@ -11,9 +11,9 @@ myApp = require('./server.js');
 
 // I chose to write all the paths as variables to use throughout.
 var express_port = 9000;
-var express_root = __dirname + '/app';
+
 var paths = {
-    sass: 'app/stylesheets/sass/', // Stylesheets folder for SASS
+    sass: 'app/stylesheets/scss/', // Stylesheets folder for SASS
     css: 'app/stylesheets/css/', // Stylesheets folder for CSS
     script: 'app/scripts/' // Scripts folder for JS files
 };
