@@ -1,34 +1,10 @@
-#Angular Shooters
+#Macro Fitness Tracker
 
-This is a skeleton template using AngularJS, Bourbon and Neat, NodeJS, and ExpressJS(4) so you can just shoot it and Gulp. The skeleton is based on several Yeoman generators that I have used but did not like because I wanted to use a different task runner than Grunt, thus I used Gulp, and I wanted Bourbon and Neat right out of the box. 
+This projects uses my [*angular-shooters*](https://github.com/AbdullahAlger/angular-shooters) skeleton which uses HTML 5, AngularJS, ExpressJS, Neat, Bourbon, and Gulp. I will incorporate Mongoose, MongoDB and D3.js for data storage and visualizations, respectively.
 
-This skeleton connects Bourbon and Neat through NodeJS and uses ExpressJS to allow you to create various routes you may need. Everything is connected through AngularJS, and I have also included UI Router so you would not have to.  
+### Application Purpose
 
-The current directory tree is as follows:
-
-```
-├── LICENSE
-├── README.md
-├── app
-│   ├── index.html
-│   ├── routes
-│   │   └── index.js
-│   ├── scripts
-│   │   ├── app.js
-│   │   ├── controllers
-│   │   ├── directives
-│   │   └── services
-│   ├── stylesheets
-│   │   └── scss
-│   └── views
-├── gulpfile.js
-├── package.json
-└── server.js
-```
-
-If you like the project, please use it. Just make sure to run ```npm install``` and ```bower install``` to get all the dependencies.
-
-I will continue to work on this project. If you have any improvements, please fork and make a pull request. 
+This application calculates your daily caloric intake and macronutrients to provide you with a daily (and ongoing) progress report for tracking all of your nutrition goals. It uses D3.js to provide you with a visual chart of your progress as you insert your calculations. It is similar to the tracking that you might see on Bodybuilding.com's fitness database or through Fitness Pal. However, this tracker will show you your macronutrient calculations visually in conjunction with your weight and caloric data in order to make the necessary adjustments you will need on your fitness journey.
 
 
 ##LICENSE
