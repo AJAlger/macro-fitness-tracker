@@ -1,29 +1,42 @@
 <!DOCTYPE html>
-        <html>
+<html ng-app="NutritionTracker">
 
 <head>
 
-    <title></title>
+    <title>Angular Nutrition Tracker</title>
     <!------ STYLESHEETS ------>
-
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
     <link rel="stylesheet" href="stylesheets/css/main.css" />
 
 </head>
 <body>
 
+<div class="navbar">
+    <div class="navbar-inner">
+        <ul class="nav">
+            <li><a ui-sref="index">Home</a></li>
+            <li><a ui-sref="addData">Add Info</a></li>
+            <li><a ui-sref="dataGraphs">Graphs</a></li>
+        </ul>
+    </div>
+</div>
+
+
 This is the main page.
+<div ui-view></div>
 
 
-<ui-view></ui-view>
 
 
 
 <!------ SCRIPTS ------>
-
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.min.js"></script>
+<script src="../bower_components/hammerjs/hammer.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../bower_components/angular-material/angular-material.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
 <script src="scripts/app.js"></script>
-
 
 </body>
 

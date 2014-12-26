@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     plumber = require('gulp-plumber'),
     neat = require('node-neat').includePaths;
-myApp = require('./server.js');
+
+var myApp = require('./server.js');
 // No need to load Bourbon here since Neat is included.
 // I received errors when trying to load Bourbon by itself.
 // Since Neat depends on Bourbon, loading Neat works just as well.
