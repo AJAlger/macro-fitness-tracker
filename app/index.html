@@ -11,19 +11,22 @@
 </head>
 <body>
 
-<div class="navbar">
-    <div class="navbar-inner">
-        <ul class="nav">
-            <li><a ui-sref="index">Home</a></li>
-            <li><a ui-sref="addData">Add Info</a></li>
-            <li><a ui-sref="dataGraphs">Graphs</a></li>
-        </ul>
-    </div>
+<div ng-controller="navbar">
+    <md-tabs class="md-accent" md-selected="data.selectedIndex">
+        <md-tab id="tab1" aria-controls="tab1-content">
+            {{data.firstLabel}}
+        </md-tab>
+        <md-tab id="tab2" aria-controls="tab2-content">
+            {{data.secondLabel}}
+        </md-tab>
+        <md-tab id="tab3" aria-controls="tab3-content">
+            {{data.thirdLabel}}
+        </md-tab>
+    </md-tabs>
 </div>
 
 
-This is the main page.
-<div ui-view></div>
+
 
 
 

@@ -1,5 +1,5 @@
 
-var app = angular.module('NutritionTracker', ['ui-router']);
+var app = angular.module('NutritionTracker', ['ngMaterial', 'ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
@@ -9,7 +9,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
 
         .state('DataAdd', {
-            url: "/",
+            url: "/add",
             templateUrl: "views/_dataAdd.html",
             controller: "dataAdd"
         })
@@ -19,12 +19,30 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: "dataGraphs"
         });
 
-
 });
 
-app.controller('dataAdd', ['$scope', function($scope) {
+app.controller('navbar', ['$scope', function($scope) {
+
+  $scope.data = {
+      selectedIndex: 0,
+      firstLabel: "Item One",
+      secondLabel: "Item Two",
+      thirdLabel: "Item Three"
+  };
+
+    $scope.next = function() {
+        $scope.data.selectedIndex = Math.min($scope.data.selectedIndex + 1, 2);
+    };
+
+    $scope.previous = function() {
+        $scope.data.selectedIndex = Math.max($scope.data.selectedIndex -1, 0);
+    };
 
 }]);
+
+app.controller('dataAdd', function($scope) {
+
+});
 
 app.controller('dataGraphs', ['$scope', function($scope) {
 

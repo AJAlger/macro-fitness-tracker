@@ -1,17 +1,7 @@
-/* Neat 1.7.0
- * http://neat.bourbon.io
- * Copyright 2012-2014 thoughtbot, inc.
- * MIT License */
-html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit; }
-
 /* Added Bourbon and Neat */
+.ng-scope {
+  height: 100%; }
+
+/* Adding other SCSS files for the other views */
 
 /*# sourceMappingURL=main.css.map */
