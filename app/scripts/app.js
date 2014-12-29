@@ -1,50 +1,48 @@
 
 var app = angular.module('NutritionTracker', ['ngMaterial', 'ui.router']);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', function($stateProvider, $urlRouterProvider, $mdThemingProvider) {
 
     $urlRouterProvider.otherwise("/");
 
     // STATES
     $stateProvider
 
-        .state('DataAdd', {
+        .state("home", {
+            url: "/",
+            templateUrl: "views/_landing.html"
+        })
+        .state("data", {
             url: "/add",
             templateUrl: "views/_dataAdd.html",
             controller: "dataAdd"
         })
-        .state('DataGraphs', {
+        .state("graphs", {
             url: "/graphs",
-            templateUrl: "views/_dataGraphs",
-            controller: "dataGraphs"
+            templateUrl: "views/_dataGraphs.html"
         });
 
-});
 
-app.controller('navbar', ['$scope', function($scope) {
-
-  $scope.data = {
-      selectedIndex: 0,
-      firstLabel: "Item One",
-      secondLabel: "Item Two",
-      thirdLabel: "Item Three"
-  };
-
-    $scope.next = function() {
-        $scope.data.selectedIndex = Math.min($scope.data.selectedIndex + 1, 2);
-    };
-
-    $scope.previous = function() {
-        $scope.data.selectedIndex = Math.max($scope.data.selectedIndex -1, 0);
-    };
 
 }]);
 
-app.controller('dataAdd', function($scope) {
+app.controller('navBar', ['$scope', function($scope) {
 
-});
-
-app.controller('dataGraphs', ['$scope', function($scope) {
+    $scope.labels =  {
+        homeTab: "Home",
+        firstTab: "Add Information",
+        secondTab: "Charts"
+    }
 
 }]);
 
+
+app.controller("dataAdd", ['$scope', function($scope) {
+
+
+
+}]);
+
+app.controller("dataGraphs", ["$scope", function($scope) {
+
+}]);

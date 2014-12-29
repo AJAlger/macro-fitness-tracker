@@ -1,7 +1,7 @@
-/* Added Bourbon and Neat */
-.ng-scope {
-  height: 100%; }
+md-tabs.md-default-theme .md-header {
+  background-color: #008800; }
 
-/* Adding other SCSS files for the other views */
+.views {
+  height: 800px; }
 
 /*# sourceMappingURL=main.css.map */

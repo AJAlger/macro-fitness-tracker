@@ -5,29 +5,37 @@
 
     <title>Angular Nutrition Tracker</title>
     <!------ STYLESHEETS ------>
+
     <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
     <link rel="stylesheet" href="stylesheets/css/main.css" />
 
 </head>
-<body>
+<body layout-fill layout-align="center">
+<div style="background-color: #3f51b5;" flex="70">
 
-<div ng-controller="navbar">
-    <md-tabs class="md-accent" md-selected="data.selectedIndex">
-        <md-tab id="tab1" aria-controls="tab1-content">
-            {{data.firstLabel}}
-        </md-tab>
-        <md-tab id="tab2" aria-controls="tab2-content">
-            {{data.secondLabel}}
-        </md-tab>
-        <md-tab id="tab3" aria-controls="tab3-content">
-            {{data.thirdLabel}}
-        </md-tab>
-    </md-tabs>
+    <div layout="column" style="background-color: #795548; color: #ffffff" layout-fill >
+        Column
+    </div>
+
+    This is the front page.
+    <div layout="row" style="background-color: green;">
+        this is another line on front page
+    </div>
+    <div layout="row" style="background-color: orange">
+        this is another column
+    </div>
+
+
+    <div class="navlist" layout="column"  ng-controller="navBar">
+    <md-tabs >
+        <md-tab ui-sref="home">{{labels.homeTab}}</md-tab>
+            <md-tab ui-sref="data">{{labels.firstTab}}</md-tab>
+            <md-tab ui-sref="graphs">{{labels.secondTab}}</md-tab>
+     </md-tabs>
+
+    </div>
+    <md-content layout="column" ui-view layout></md-content>
 </div>
-
-
-
-
 
 
 
@@ -39,7 +47,7 @@
 <script src="../bower_components/angular-material/angular-material.js"></script>
 <script src="../bower_components/angular-aria/angular-aria.js"></script>
 <script src="../bower_components/angular-animate/angular-animate.js"></script>
-<script src="scripts/app.js"></script>
+<script src="scripts/minjs/app.js"></script>
 
 </body>
 

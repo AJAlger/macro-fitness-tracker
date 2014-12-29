@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     livereload = require('gulp-livereload'),
     plumber = require('gulp-plumber'),
+    rename = require('gulp-rename'),
     neat = require('node-neat').includePaths;
 
 var myApp = require('./server.js');
@@ -44,14 +45,14 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
     return gulp.src(paths.script + '*.js') // Path to Script folder
         .pipe(plumber()) // Checks for any errors and notifies if there are
-        .pipe(uglify()) // Makes all scripts into a single line for minimizing file size
-        .pipe(gulp.dest('app/scripts/minjs')) // Puts files into and creates new Minjs folder
+        .pipe(uglify())// Makes all scripts into a single line for minimizing file size
+        .pipe(gulp.dest(paths.script + '/minjs')) // Puts files into and creates new Minjs folder
         .pipe(livereload()); // Reloading Gulp each time a change has been made
 });
 
 // Watching Folders and Files for Changes
 gulp.task('watch', function() {
-    var server = livereload(); // Livereload is loaded
+    livereload.listen(); // Livereload is loaded
     gulp.watch(paths.script + '*.js', ['scripts']); // Watching Scripts folder
     gulp.watch(paths.sass + '*.scss', ['styles']); // Watching Stylesheets folder
 });
