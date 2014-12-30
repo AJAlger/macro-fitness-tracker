@@ -3,7 +3,10 @@
   margin: auto; }
   .form-pad section {
     margin-top: 30px; }
-    .form-pad section md-toolbar {
-      background-color: #444444; }
+    .form-pad section .add-header {
+      background-color: #424242; }
+    .form-pad section form > .row > * {
+      font-size: inherit;
+      margin: 10px 8px; }
 
 /*# sourceMappingURL=add.css.map */

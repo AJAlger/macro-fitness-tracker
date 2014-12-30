@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
     <link rel="stylesheet" href="../bower_components/angular-material/themes/deep-orange-theme.css" />
+    <link rel="stylesheet" href="../bower_components/fontawesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="stylesheets/css/main.css" />
 
 </head>
@@ -27,7 +28,12 @@
 
 <div class="container" layout="column" role="main" layout-fill>
     <md-toolbar class="md-deep-orange-theme">
-        <h2 class="md-toolbar-tools">Main Bar</h2>
+        <div class="md-toolbar-tools">
+            <div layout="row" flex aria-label="Toggle Menu" ng-controller="menuBar">
+                <i class="fa fa-bars fa-lg" hide-gt-sm ng-click="openMenu()"></i>
+                <div class="bar-title">Main Bar</div>
+            </div>
+        </div>
     </md-toolbar>
     <md-content ui-view></md-content>
 </div>

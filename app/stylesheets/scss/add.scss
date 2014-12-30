@@ -1,3 +1,5 @@
+@import "bourbon";
+
 .form-pad {
   max-width: 900px;
   margin: auto;
@@ -5,11 +7,23 @@
   section {
     margin-top: 30px;
 
-    md-toolbar {
-      background-color: #444444;
+    .add-header {
+      background-color: #424242;
 
     }
+
+    form > .row > * {
+      font-size: inherit;
+      @include margin(10px 8px 10px 8px);
+    }
+
+
   }
 
+
 }
+
+
+
+
 

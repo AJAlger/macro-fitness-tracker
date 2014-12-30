@@ -1,7 +1,7 @@
 
 var app = angular.module('NutritionTracker', ['ngMaterial', 'ui.router']);
 
-app.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', function($stateProvider, $urlRouterProvider, $mdThemingProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise("/");
 
@@ -26,7 +26,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', functi
 
 }]);
 
-app.controller('menuBar', ['$scope', function($scope) {
+app.controller('menuBar', ['$scope', '$mdSidenav', function($scope, $mdSidenav) {
 
     $scope.items = [
         {label: "Home", location: "home"},
@@ -34,10 +34,11 @@ app.controller('menuBar', ['$scope', function($scope) {
         {label: "Charts", location: "graphs"}
     ];
 
-
+    $scope.openMenu = function() {
+        $mdSidenav('left').toggle();
+    };
 
 }]);
-
 
 
 app.controller("dataAdd", ['$scope', function($scope) {

@@ -1,18 +1,23 @@
 <!-- Here is where I will add the list where users will enter the data that they want to be processed -->
 <md-content id="addPage" class="md-padding" ng-controller="dataAdd">
 
-    <div flex class="form-pad" layout-fill layout="column" style="z-index: 1">
+    <div flex class="form-pad" layout-fill layout="column" style="z-index: 1" >
         <section class="md-whiteframe-z1">
             <md-toolbar class="add-header">
                 <div class="md-toolbar-tools">
                     <span>Data Form</span>
                 </div>
             </md-toolbar>
-            <md-content md-theme="docs-dark">
+            <md-content class="md-deep-orange-theme">
                 <form style="padding: 20px;">
-                    <div class="row">
-                        <md-text-float label="Title" ng-model="user.title"></md-text-float>
-                        <md-text-float label="eMail" ng-model="user.email" type="email"></md-text-float>
+                    <div class="row" layout="row">
+                        <md-text-float class="md-deep-orange-theme" label="Title" ng-model="user.title"></md-text-float>
+                        <md-text-float class="md-deep-orange-theme" label="eMail" ng-model="user.email" type="email"></md-text-float>
+                    </div>
+                    <div class="row" layout="row">
+                        <md-text-float label="City" ng-model="user.city"> </md-text-float>
+                        <md-text-float label="State" ng-model="user.state"> </md-text-float>
+                        <md-text-float label="Postal Code" ng-model="user.postalCode"> </md-text-float>
                     </div>
                 </form>
             </md-content>
