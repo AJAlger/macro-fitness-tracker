@@ -10,34 +10,23 @@
     <link rel="stylesheet" href="stylesheets/css/main.css" />
 
 </head>
-<body layout-fill layout-align="center">
-<div style="background-color: #3f51b5;" flex="70">
+<body flex layout="row" layout-align="center center">
 
-    <div layout="column" style="background-color: #795548; color: #ffffff" layout-fill >
-        Column
+<div class="container md-whiteframe-z1" flex="70" layout="column" >
+
+    <md-toolbar class="md" style="background-color: #795548; color: #ffffff" >
+        row
+    </md-toolbar>
+
+    <div class="navlist" ng-controller="navBar">
+        <md-tabs class="md-whiteframe-z2">
+            <md-tab id="tab-1" aria-controls="tab1-content" ui-sref="home">{{labels.homeTab}}</md-tab>
+                <md-tab id="tab-2" aria-controls="tab2-content" ui-sref="data">{{labels.firstTab}}</md-tab>
+                <md-tab id="tab-3" aria-controls="tab3-content" ui-sref="graphs">{{labels.secondTab}}</md-tab>
+         </md-tabs>
     </div>
-
-    This is the front page.
-    <div layout="row" style="background-color: green;">
-        this is another line on front page
-    </div>
-    <div layout="row" style="background-color: orange">
-        this is another column
-    </div>
-
-
-    <div class="navlist" layout="column"  ng-controller="navBar">
-    <md-tabs >
-        <md-tab ui-sref="home">{{labels.homeTab}}</md-tab>
-            <md-tab ui-sref="data">{{labels.firstTab}}</md-tab>
-            <md-tab ui-sref="graphs">{{labels.secondTab}}</md-tab>
-     </md-tabs>
-
-    </div>
-    <md-content layout="column" ui-view layout></md-content>
+    <md-content ui-view></md-content>
 </div>
-
-
 
 
 <!------ SCRIPTS ------>

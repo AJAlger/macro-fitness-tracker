@@ -1,8 +1,20 @@
+div.views {
+  height: 800px;
+}
+
 md-tabs.md-default-theme .md-header {
   background-color: #008800;
 }
 
-.views {
-  height: 800px;
+div.container {
+  height: 100%;
+    z-index: 1;
+
+    .navlist {
+      width: 100%;
+      text-align: center;
+    }
 }
 
+
+@import "add";

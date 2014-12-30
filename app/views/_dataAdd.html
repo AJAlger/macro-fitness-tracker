@@ -1,7 +1,16 @@
 <!-- Here is where I will add the list where users will enter the data that they want to be processed -->
-<div class="views" ng-controller="dataAdd" style="background-color: #8bc34a" >
+<md-content id="addPage" role="tabpanel" class="md-default-theme views md-tabs-content md-padding" ng-controller="dataAdd" style="background-color: #8bc34a" >
     this is the add ui-view
-
-
-
-</div>
+    <div flex class="content doc-content" layout-fill layout="column" style="z-index: 2">
+        <section class="md-whiteframe-z1">
+            <md-toolbar class="md-default-theme add-header">
+                <div class="md-toolbar-tools">
+                    <h1>mdtoolbar</h1>
+                </div>
+            </md-toolbar>
+        </section>
+        <section>
+            This is another section of the page
+        </section>
+    </div>
+</md-content>
