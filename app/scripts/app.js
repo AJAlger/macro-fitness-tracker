@@ -26,15 +26,17 @@ app.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', functi
 
 }]);
 
-app.controller('navBar', ['$scope', function($scope) {
+app.controller('menuBar', ['$scope', function($scope) {
 
-    $scope.labels =  {
-        homeTab: "Home",
-        firstTab: "Add Information",
-        secondTab: "Charts"
-    }
+    $scope.items =  [
+        {label: "Home"},
+        {label: "Add Information"},
+        {label: "Charts"}
+        ];
+
 
 }]);
+
 
 
 app.controller("dataAdd", ['$scope', function($scope) {

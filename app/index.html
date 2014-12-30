@@ -10,21 +10,23 @@
     <link rel="stylesheet" href="stylesheets/css/main.css" />
 
 </head>
-<body flex layout="row" layout-align="center center">
+<body layout="row">
 
-<div class="container md-whiteframe-z1" flex="70" layout="column" >
-
-    <md-toolbar class="md" style="background-color: #795548; color: #ffffff" >
-        row
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
+    <md-toolbar style="background-color: #708090">
+        <h2 class="md-toolbar-tools">Nav Top Bar</h2>
     </md-toolbar>
+    <md-content ng-controller="menuBar">
+        <a ng-repeat="item in items" class="menu-item md-menu-item" md-ink-ripple="#bbb">
+            {{item.label}}
+        </a>
+    </md-content>
+</md-sidenav>
 
-    <div class="navlist" ng-controller="navBar">
-        <md-tabs class="md-whiteframe-z2">
-            <md-tab id="tab-1" aria-controls="tab1-content" ui-sref="home">{{labels.homeTab}}</md-tab>
-                <md-tab id="tab-2" aria-controls="tab2-content" ui-sref="data">{{labels.firstTab}}</md-tab>
-                <md-tab id="tab-3" aria-controls="tab3-content" ui-sref="graphs">{{labels.secondTab}}</md-tab>
-         </md-tabs>
-    </div>
+<div class="container" layout="column" role="main" layout-fill>
+    <md-toolbar style="background-color: #708090">
+        <h2 class="md-toolbar-tools">Main Bar</h2>
+    </md-toolbar>
     <md-content ui-view></md-content>
 </div>
 
