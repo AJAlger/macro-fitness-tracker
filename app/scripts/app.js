@@ -7,7 +7,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 
     // STATES
     $stateProvider
-
         .state("home", {
             url: "/",
             templateUrl: "views/_landing.html"
@@ -21,9 +20,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             url: "/graphs",
             templateUrl: "views/_dataGraphs.html"
         });
-
-
-
 }]);
 
 app.controller('menuBar', ['$scope', '$mdSidenav', function($scope, $mdSidenav) {
@@ -39,7 +35,6 @@ app.controller('menuBar', ['$scope', '$mdSidenav', function($scope, $mdSidenav) 
     };
 
 }]);
-
 
 app.controller("dataAdd", ['$scope', function($scope) {
 
