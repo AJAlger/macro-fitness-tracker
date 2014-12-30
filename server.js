@@ -3,8 +3,9 @@ var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     morgan = require('morgan'),
-    errorHandler = require('errorhandler')
-    mongoose = require('mongoose');
+    errorHandler = require('errorhandler'),
+    mongoose = require('mongoose'),
+    baseline = require('./app/routes/');
 
 app.use(express.static(__dirname + '/app'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
@@ -24,6 +25,31 @@ var router = express.Router();
 router.get('/', function(request, response) {
     response.json('This is working. No worries!');
 });
+
+router.route('/baseline')
+
+.post(function(request, response) {
+        var base = new baseline;
+        base.protein = request.body.protein;
+        base.carbohydrates = request.body.carbohydrates;
+        base.fat = request.body.fat;
+
+        base.save(function(err) {
+            if (err)
+            response.send(err);
+
+            response.json({ message: "Information sent!"})
+        });
+    })
+
+.get(function(request, response) {
+       baseline.find(function(err, bases) {
+           if(err)
+           response.send(err);
+
+           response.json(bases);
+       });
+    });
 
 app.use('/api', router);
 
