@@ -28,11 +28,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', functi
 
 app.controller('menuBar', ['$scope', function($scope) {
 
-    $scope.items =  [
-        {label: "Home"},
-        {label: "Add Information"},
-        {label: "Charts"}
-        ];
+    $scope.items = [
+        {label: "Home", location: "home"},
+        {label: "Add Information", location: "data"},
+        {label: "Charts", location: "graphs"}
+    ];
+
 
 
 }]);

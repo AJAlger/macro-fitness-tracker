@@ -1,17 +1,21 @@
-md-tabs.md-default-theme .md-header {
-  background-color: #008800;
+.menu-item {
+  display: block;
+  color: #000;
+  font-size: 1em;
+  line-height: 40px;
+  max-height: 40px;
+  opacity: 1;
+  padding: 0 28px;
+  width: 100%;
+  z-index: 1;
+  text-transform: capitalize;
+  text-align: left;
 
-}
+  &:hover {
+    color: #FF9E80;
+  }
 
-div.container {
-  height: 100%;
-    z-index: 1;
-
-    .navlist {
-      width: 100%;
-      text-align: center;
-    }
-}
+  }
 
 
 @import "add";
