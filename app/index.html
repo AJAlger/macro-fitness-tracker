@@ -7,16 +7,17 @@
     <!------ STYLESHEETS ------>
 
     <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="../bower_components/angular-material/themes/deep-orange-theme.css" />
     <link rel="stylesheet" href="stylesheets/css/main.css" />
 
 </head>
 <body layout="row">
 
 <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-sm')">
-    <md-toolbar style="background-color: #D84315">
+    <md-toolbar class="md-deep-orange-theme">
         <h2 class="md-toolbar-tools">Nav Top Bar</h2>
     </md-toolbar>
-    <md-content ng-controller="menuBar" class="md-default-theme">
+    <md-content ng-controller="menuBar" class="md-deep-orange-theme">
         <md-button layout-align="left" ng-repeat="item in items" ui-sref="{{item.location}}" class="menu-item"
            md-ink-ripple="#bbb" aria-hidden="false">
             <span>{{item.label}}</span>
@@ -25,7 +26,7 @@
 </md-sidenav>
 
 <div class="container" layout="column" role="main" layout-fill>
-    <md-toolbar style="background-color: #D84315">
+    <md-toolbar class="md-deep-orange-theme">
         <h2 class="md-toolbar-tools">Main Bar</h2>
     </md-toolbar>
     <md-content ui-view></md-content>

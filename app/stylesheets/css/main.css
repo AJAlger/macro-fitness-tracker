@@ -13,10 +13,12 @@
   .menu-item:hover {
     color: #FF9E80; }
 
-.doc-content {
-  max-width: 800px;
+.form-pad {
+  max-width: 900px;
   margin: auto; }
-  .doc-content .add-header {
-    background-color: #9E9E9E; }
+  .form-pad section {
+    margin-top: 30px; }
+    .form-pad section md-toolbar {
+      background-color: #444444; }
 
 /*# sourceMappingURL=main.css.map */
