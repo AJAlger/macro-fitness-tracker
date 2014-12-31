@@ -15,9 +15,7 @@
 
 i {
   line-height: inherit;
-  position: relative; }
-
-i {
+  position: relative;
   margin-right: 10px; }
 
 .form-pad {
@@ -27,8 +25,17 @@ i {
     margin-top: 30px; }
     .form-pad section .add-header {
       background-color: #424242; }
-    .form-pad section form > .row > * {
+    .form-pad section form .row md-input-group label {
+      font-size: 0.9em; }
+    .form-pad section form .row * {
       font-size: inherit;
-      margin: 10px 8px; }
+      margin-right: 8px;
+      margin-left: 8px; }
+    .form-pad section md-card.card {
+      display: inline-block;
+      width: 250px; }
+      .form-pad section md-card.card span {
+        margin-top: 1px;
+        font-weight: 800; }
 
 /*# sourceMappingURL=main.css.map */

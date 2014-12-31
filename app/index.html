@@ -14,9 +14,9 @@
 </head>
 <body layout="row">
 
-<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-sm')">
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
     <md-toolbar class="md-deep-orange-theme">
-        <h2 class="md-toolbar-tools">Nav Top Bar</h2>
+        <h2 class="md-toolbar-tools">Menu</h2>
     </md-toolbar>
     <md-content ng-controller="menuBar" class="md-deep-orange-theme">
         <md-button layout-align="left" ng-repeat="item in items" ui-sref="{{item.location}}" class="menu-item"
@@ -27,10 +27,10 @@
 </md-sidenav>
 
 <div class="container" layout="column" role="main" layout-fill>
-    <md-toolbar class="md-deep-orange-theme">
+    <md-toolbar class="md-header md-deep-orange-theme">
         <div class="md-toolbar-tools">
             <div layout="row" flex aria-label="Toggle Menu" ng-controller="menuBar">
-                <i class="fa fa-bars fa-lg" hide-gt-sm ng-click="openMenu()"></i>
+                <i class="fa fa-bars fa-lg" hide-gt-md ng-click="openMenu()"></i>
                 <div class="bar-title">Main Bar</div>
             </div>
         </div>

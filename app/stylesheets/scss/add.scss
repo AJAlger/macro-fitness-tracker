@@ -12,11 +12,34 @@
 
     }
 
-    form > .row > * {
-      font-size: inherit;
-      @include margin(10px 8px 10px 8px);
+    form {
+      
+      .row {
+
+        md-input-group label {
+          font-size: 0.9em;
+        }
+
+        * {
+          font-size: inherit;
+          @include margin(null 8px null 8px);
+
+        }
+
+      }
+
     }
 
+    md-card.card {
+      display: inline-block;
+      width: 250px;
+
+      span {
+        margin-top: 1px;
+        font-weight: 800;
+      }
+
+    }
 
   }
 

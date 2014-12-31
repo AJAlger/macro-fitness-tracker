@@ -7,17 +7,17 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 
     // STATES
     $stateProvider
-        .state("home", {
+        .state("index", {
             url: "/",
             templateUrl: "views/_landing.html"
         })
         .state("data", {
-            url: "/add",
+            url: "/macronutrients",
             templateUrl: "views/_dataAdd.html",
             controller: "dataAdd"
         })
-        .state("graphs", {
-            url: "/graphs",
+        .state("summary", {
+            url: "/summary",
             templateUrl: "views/_dataGraphs.html"
         });
 }]);
@@ -25,9 +25,9 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 app.controller('menuBar', ['$scope', '$mdSidenav', function($scope, $mdSidenav) {
 
     $scope.items = [
-        {label: "Home", location: "home"},
-        {label: "Add Information", location: "data"},
-        {label: "Charts", location: "graphs"}
+        {label: "Introduction", location: "index"},
+        {label: "Macronutrients", location: "data"},
+        {label: "Summary", location: "summary"}
     ];
 
     $scope.openMenu = function() {
@@ -38,6 +38,13 @@ app.controller('menuBar', ['$scope', '$mdSidenav', function($scope, $mdSidenav) 
 
 app.controller("dataAdd", ['$scope', function($scope) {
 
+    $scope.macros = [
+        {protein: null},
+        {carbs: null},
+        {fat: null}
+    ];
+
+    $scope.
 
 
 }]);

@@ -8,20 +8,33 @@
                     <span>Data Form</span>
                 </div>
             </md-toolbar>
-            <md-content class="md-deep-orange-theme">
-                <form style="padding: 20px;">
+            <md-content class="md-deep-orange-theme md-padding">
+                <form>
+                    <h3>Enter Your Daily Macronutrients</h3>
                     <div class="row" layout="row">
-                        <md-text-float class="md-deep-orange-theme" label="Title" ng-model="user.title"></md-text-float>
-                        <md-text-float class="md-deep-orange-theme" label="eMail" ng-model="user.email" type="email"></md-text-float>
+                        <md-text-float class="md-deep-orange-theme" type="date" label="Date" ng-model="user.title"></md-text-float>
                     </div>
+                    <h3>Total Daily Macros</h3>
                     <div class="row" layout="row">
-                        <md-text-float label="City" ng-model="user.city"> </md-text-float>
-                        <md-text-float label="State" ng-model="user.state"> </md-text-float>
-                        <md-text-float label="Postal Code" ng-model="user.postalCode"> </md-text-float>
+                        <md-text-float class="md-deep-orange-theme" type="number" label="Protein" ng-model="macros.protein"></md-text-float>
+                        <md-text-float class="md-deep-orange-theme" type="number" label="Carbohydrates" ng-model="user.carbs"></md-text-float>
+                        <md-text-float class="md-deep-orange-theme" type="number" label="Fat" ng-model="user.fat"></md-text-float>
                     </div>
                 </form>
             </md-content>
+            <md-content class="md-deep-orange-theme md-padding">
+                <h3>Total Calories from Macronutrients</h3>
+                    <md-card class="card">
+                        <span>Protein</span>
+                        <div>{{macros.protein}}</div>
+                    </md-card>
+                    <md-card class="card">
+                        <span>Carbohydrates</span>
+                    </md-card>
+                    <md-card class="card">
+                        <span>Fat</span>
+                    </md-card>
+            </md-content>
         </section>
-
     </div>
 </md-content>
