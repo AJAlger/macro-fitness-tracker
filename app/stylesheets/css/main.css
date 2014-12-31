@@ -31,11 +31,23 @@ i {
       font-size: inherit;
       margin-right: 8px;
       margin-left: 8px; }
-    .form-pad section md-card.card {
-      display: inline-block;
-      width: 250px; }
-      .form-pad section md-card.card span {
-        margin-top: 1px;
-        font-weight: 800; }
+    .form-pad section div.calorieContainer {
+      max-width: inherit; }
+      .form-pad section div.calorieContainer .tCalories {
+        display: inline-block;
+        width: 200px;
+        height: 150px;
+        padding: 8px;
+        margin: 10px 10px 20px; }
+        .form-pad section div.calorieContainer .tCalories span {
+          font-weight: 700;
+          text-align: left; }
+        .form-pad section div.calorieContainer .tCalories .macros {
+          text-align: center;
+          font-family: Verdana, Geneva, sans-serif;
+          font-size: 2.5em;
+          font-weight: 200;
+          margin: 25px;
+          word-wrap: break-word; }
 
 /*# sourceMappingURL=main.css.map */

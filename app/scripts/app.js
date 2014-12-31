@@ -22,7 +22,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         });
 }]);
 
-app.controller('menuBar', ['$scope', '$mdSidenav', function($scope, $mdSidenav) {
+app.controller("menuBar", ["$scope", "$mdSidenav", function($scope, $mdSidenav) {
 
     $scope.items = [
         {label: "Introduction", location: "index"},
@@ -31,20 +31,21 @@ app.controller('menuBar', ['$scope', '$mdSidenav', function($scope, $mdSidenav) 
     ];
 
     $scope.openMenu = function() {
-        $mdSidenav('left').toggle();
+        $mdSidenav("left").toggle();
     };
 
 }]);
 
 app.controller("dataAdd", ['$scope', function($scope) {
 
+    $scope.date = new Date();
+
     $scope.macros = [
-        {protein: null},
-        {carbs: null},
-        {fat: null}
+        {protein: ''},
+        {carbs: ''},
+        {fat: ''}
     ];
 
-    $scope.
 
 
 }]);
@@ -52,3 +53,10 @@ app.controller("dataAdd", ['$scope', function($scope) {
 app.controller("dataGraphs", ["$scope", function($scope) {
 
 }]);
+
+app.factory("macroCalculation", ['$scope', function($scope) {
+
+
+
+}]);
+

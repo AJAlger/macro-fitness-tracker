@@ -5,35 +5,73 @@
         <section class="md-whiteframe-z1">
             <md-toolbar class="add-header">
                 <div class="md-toolbar-tools">
-                    <span>Data Form</span>
+                    <span>Enter Daily Macronutrients</span>
                 </div>
             </md-toolbar>
             <md-content class="md-deep-orange-theme md-padding">
                 <form>
-                    <h3>Enter Your Daily Macronutrients</h3>
+                    <h3>Date</h3>
                     <div class="row" layout="row">
-                        <md-text-float class="md-deep-orange-theme" type="date" label="Date" ng-model="user.title"></md-text-float>
+                        <md-text-float class="md-deep-orange-theme" type="date" ng-model="date"></md-text-float>
                     </div>
-                    <h3>Total Daily Macros</h3>
+                    <h3>Enter Daily Macros in Grams</h3>
                     <div class="row" layout="row">
                         <md-text-float class="md-deep-orange-theme" type="number" label="Protein" ng-model="macros.protein"></md-text-float>
-                        <md-text-float class="md-deep-orange-theme" type="number" label="Carbohydrates" ng-model="user.carbs"></md-text-float>
-                        <md-text-float class="md-deep-orange-theme" type="number" label="Fat" ng-model="user.fat"></md-text-float>
+                        <md-text-float class="md-deep-orange-theme" type="number" label="Carbohydrates" ng-model="macros.carbs"></md-text-float>
+                        <md-text-float class="md-deep-orange-theme" type="number" label="Fat" ng-model="macros.fat"></md-text-float>
                     </div>
                 </form>
             </md-content>
             <md-content class="md-deep-orange-theme md-padding">
+                <md-divider></md-divider>
                 <h3>Total Calories from Macronutrients</h3>
-                    <md-card class="card">
+
+                <div class="calorieContainer" layout="row" layout-align="center center">
+
+                    <div class="tCalories md-whiteframe-z1">
                         <span>Protein</span>
-                        <div>{{macros.protein}}</div>
-                    </md-card>
-                    <md-card class="card">
+                        <div class="macros">{{macros.protein * 4}}</div>
+                    </div>
+
+                    <div class="tCalories md-whiteframe-z1">
                         <span>Carbohydrates</span>
-                    </md-card>
-                    <md-card class="card">
+                        <div class="macros">{{macros.carbs * 4}}</div>
+                    </div>
+
+                    <div class="tCalories md-whiteframe-z1">
                         <span>Fat</span>
-                    </md-card>
+                        <div class="macros">{{macros.fat * 9}}</div>
+                    </div>
+
+                    <div class="tCalories md-whiteframe-z1">
+                        <span>Total Calories</span>
+                        <div class="macros">{{(macros.protein * 4) + (macros.carbs * 4) + (macros.fat * 9)}}</div>
+                    </div>
+
+                </div>
+                <md-divider></md-divider>
+                <h3>Calorie Percentages from Macronutrients</h3>
+                <div class="calorieContainer" layout="row" layout-align="center center">
+
+                    <div class="tCalories md-whiteframe-z1">
+                        <span>Protein</span>
+                        <div class="macros">{{macros.protein / (macros.protein + macros.carbs + macros.fat) * 100 | number: 0}}%</div>
+                    </div>
+
+                    <div class="tCalories md-whiteframe-z1">
+                        <span>Carbohydrates</span>
+                        <div class="macros">{{macros.carbs / (macros.protein + macros.carbs + macros.fat) * 100 | number: 0}}%</div>
+                    </div>
+
+                    <div class="tCalories md-whiteframe-z1">
+                        <span>Fat</span>
+                        <div class="macros">{{macros.fat / (macros.protein + macros.carbs + macros.fat) * 100 | number: 0}}%</div>
+                    </div>
+
+
+
+                </div>
+
             </md-content>
         </section>
     </div>
