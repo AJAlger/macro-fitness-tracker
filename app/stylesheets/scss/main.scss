@@ -1,12 +1,15 @@
-p {
-  line-height: 1em;
+@import "bourbon";
+
+html p, body p {
+  line-height: 1.6;
 
 }
 
 .menu-item {
   display: block;
   color: #000;
-  font-size: 1em;
+  font-size: inherit;
+  font-weight: 300;
   line-height: 40px;
   max-height: 40px;
   opacity: 1;
@@ -28,6 +31,26 @@ i {
   margin-right: 10px;
 
 }
+
+ .outer-container{
+    margin: auto;
+    padding-top: 50px;
+    max-width: 950px;
+
+    .title {
+      font-size: 34px;
+      font-weight: 300;
+      line-height: 30px;
+    }
+
+    .content {
+
+    }
+}
+
+
+
+
 
 @import "add";
 @import "graphs";

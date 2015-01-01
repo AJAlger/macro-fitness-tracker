@@ -1,10 +1,11 @@
-p {
-  line-height: 1em; }
+html p, body p {
+  line-height: 1.6; }
 
 .menu-item {
   display: block;
   color: #000;
-  font-size: 1em;
+  font-size: inherit;
+  font-weight: 300;
   line-height: 40px;
   max-height: 40px;
   opacity: 1;
@@ -21,15 +22,27 @@ i {
   position: relative;
   margin-right: 10px; }
 
+.outer-container {
+  margin: auto;
+  padding-top: 50px;
+  max-width: 950px; }
+  .outer-container .title {
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 30px; }
+
 .add-page {
   z-index: 1; }
   .add-page .form-pad {
     max-width: 900px;
     margin: auto; }
     .add-page .form-pad section {
-      margin-top: 30px; }
+      margin-top: 50px;
+      font-weight: 300; }
       .add-page .form-pad section .add-header {
         background-color: #8D6E63; }
+      .add-page .form-pad section form .subtitles {
+        font-weight: 300; }
       .add-page .form-pad section form .row md-input-group label {
         font-size: 0.9em; }
       .add-page .form-pad section form .row * {
@@ -40,6 +53,8 @@ i {
         margin: 1em;
         min-width: 7em;
         text-transform: capitalize; }
+      .add-page .form-pad section .subtitles {
+        font-weight: 300; }
       .add-page .form-pad section div.calorieContainer {
         max-width: inherit; }
         .add-page .form-pad section div.calorieContainer .tCalories {
@@ -49,7 +64,7 @@ i {
           padding: 8px;
           margin: 10px 10px 20px; }
           .add-page .form-pad section div.calorieContainer .tCalories span {
-            font-weight: 700;
+            font-weight: 300;
             text-align: left; }
           .add-page .form-pad section div.calorieContainer .tCalories .macros {
             text-align: center;
@@ -67,7 +82,7 @@ i {
     max-width: 900px;
     margin: auto; }
     .graph-page .graph-pad section {
-      margin-top: 30px; }
+      margin-top: 50px; }
       .graph-page .graph-pad section .graph-header {
         background-color: #8D6E63; }
 

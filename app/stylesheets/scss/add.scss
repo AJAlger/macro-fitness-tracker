@@ -8,7 +8,8 @@
     margin: auto;
 
     section {
-      margin-top: 30px;
+      margin-top: 50px;
+      font-weight: 300;
 
       .add-header {
         background-color: #8D6E63;
@@ -16,6 +17,10 @@
       }
 
       form {
+
+        .subtitles {
+          font-weight: 300;
+        }
 
         .row {
 
@@ -40,6 +45,10 @@
 
       }
 
+      .subtitles {
+        font-weight: 300;
+      }
+
       div.calorieContainer {
         max-width: inherit;
 
@@ -51,7 +60,7 @@
           @include margin(10px 10px 20px 10px);
 
           span {
-            font-weight: 700;
+            font-weight: 300;
             text-align: left;
           }
 
@@ -67,6 +76,7 @@
           .total {
             color: #B71C1C;
           }
+
 
         }
 

@@ -39,7 +39,6 @@ app.controller('menuBar', ['$scope', '$mdSidenav', function($scope, $mdSidenav) 
 app.controller('dataAdd', ['$scope', 'MacroCalculation', function($scope, MacroCalculation) {
 
     $scope.macros = MacroCalculation.macros();
-
     $scope.totals = MacroCalculation.totals();
 
 }]);

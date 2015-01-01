@@ -1,6 +1,6 @@
 <md-content id="addPage" class="md-padding add-page" ng-controller="dataAdd">
     <div flex class="form-pad" layout-fill layout="column">
-        <section class="md-whiteframe-z1">
+        <section class="md-whiteframe-z1 form-section">
             <md-toolbar class="add-header">
                 <div class="md-toolbar-tools">
                     <span>Enter Daily Macronutrients</span>
@@ -8,11 +8,11 @@
             </md-toolbar>
             <md-content md-theme="deep-orange" class="md-padding">
                 <form>
-                    <h3>Date</h3>
+                    <h3 class="subtitles">Date</h3>
                     <div class="row" layout="row">
                         <md-text-float md-theme="deep-orange" type="date" ng-model="date"></md-text-float>
                     </div>
-                    <h3>Enter Daily Macros in Grams</h3>
+                    <h3 class="subtitles">Enter Daily Macros in Grams</h3>
                     <div class="row" layout="row">
                        <md-text-float ng-repeat="macro in macros"
                                       md-theme="deep-orange"
@@ -24,25 +24,25 @@
                     <md-button class="md-primary submitMacros md-raised" md-theme="deep-orange">Submit</md-button>
                 </form>
             </md-content>
-            <md-content md-theme="deep-orange" class="md-padding">
+            <md-content md-theme="deep-orange" class="md-padding total-macros">
                 <md-divider></md-divider>
-                <h3>Total Calories from Macronutrients</h3>
+                <h3 class="subtitles">Total Calories from Macronutrients</h3>
                 <div class="calorieContainer" layout="row" layout-align="center center">
                     <div class="tCalories md-whiteframe-z1" ng-repeat="macro in macros">
-                        <span>{{macro.type}}</span>
+                        <span class="subtitles">{{macro.type}}</span>
                         <div class="macros">{{macro.amount * macro.multiplier}}</div>
                         <md-tooltip>{{macro.tip}}</md-tooltip>
                     </div>
                     <div class="tCalories md-whiteframe-z1">
-                        <span>Total Calories</span>
+                        <span class="subtitles">Total Calories</span>
                         <div class="macros total">{{totals()}}</div>
                     </div>
                 </div>
                 <md-divider></md-divider>
-                <h3>Calorie Percentages from Macronutrients</h3>
+                <h3 class="subtitles">Calorie Percentages from Macronutrients</h3>
                 <div class="calorieContainer" layout="row" layout-align="center center">
                     <div class="tCalories md-whiteframe-z1" ng-repeat="macro in macros">
-                        <span>{{macro.type}}</span>
+                        <span class="subtitles">{{macro.type}}</span>
                         <div class="macros">{{macro.amount * macro.multiplier / totals() * 100 | number: 0}}%</div>
                     </div>
                 </div>
