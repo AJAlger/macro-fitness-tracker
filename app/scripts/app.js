@@ -52,7 +52,10 @@ app.controller("dataAdd", ['$scope', function($scope) {
             total = total + $scope.macros[i].amount * $scope.macros[i].multiplier;
         }
         return total;
+    };
 
+    $scope.totalPercent = function() {
+        
     };
 
 
