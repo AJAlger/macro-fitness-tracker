@@ -1,3 +1,6 @@
+p {
+  line-height: 1em; }
+
 .menu-item {
   display: block;
   color: #000;
@@ -18,40 +21,54 @@ i {
   position: relative;
   margin-right: 10px; }
 
-.form-pad {
-  max-width: 900px;
-  margin: auto; }
-  .form-pad section {
-    margin-top: 30px; }
-    .form-pad section .add-header {
-      background-color: #424242; }
-    .form-pad section form .row md-input-group label {
-      font-size: 0.9em; }
-    .form-pad section form .row * {
-      font-size: inherit;
-      margin-right: 8px;
-      margin-left: 8px; }
-    .form-pad section form .submitMacros {
-      margin: 1em;
-      min-width: 7em;
-      text-transform: capitalize; }
-    .form-pad section div.calorieContainer {
-      max-width: inherit; }
-      .form-pad section div.calorieContainer .tCalories {
-        display: inline-block;
-        width: 200px;
-        height: 150px;
-        padding: 8px;
-        margin: 10px 10px 20px; }
-        .form-pad section div.calorieContainer .tCalories span {
-          font-weight: 700;
-          text-align: left; }
-        .form-pad section div.calorieContainer .tCalories .macros {
-          text-align: center;
-          font-family: Verdana, Geneva, sans-serif;
-          font-size: 2.5em;
-          font-weight: 200;
-          margin: 25px;
-          word-wrap: break-word; }
+.add-page {
+  z-index: 1; }
+  .add-page .form-pad {
+    max-width: 900px;
+    margin: auto; }
+    .add-page .form-pad section {
+      margin-top: 30px; }
+      .add-page .form-pad section .add-header {
+        background-color: #8D6E63; }
+      .add-page .form-pad section form .row md-input-group label {
+        font-size: 0.9em; }
+      .add-page .form-pad section form .row * {
+        font-size: inherit;
+        margin-right: 8px;
+        margin-left: 8px; }
+      .add-page .form-pad section form .submitMacros {
+        margin: 1em;
+        min-width: 7em;
+        text-transform: capitalize; }
+      .add-page .form-pad section div.calorieContainer {
+        max-width: inherit; }
+        .add-page .form-pad section div.calorieContainer .tCalories {
+          display: inline-block;
+          width: 200px;
+          height: 150px;
+          padding: 8px;
+          margin: 10px 10px 20px; }
+          .add-page .form-pad section div.calorieContainer .tCalories span {
+            font-weight: 700;
+            text-align: left; }
+          .add-page .form-pad section div.calorieContainer .tCalories .macros {
+            text-align: center;
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 2.5em;
+            font-weight: 200;
+            margin: 25px;
+            word-wrap: break-word; }
+          .add-page .form-pad section div.calorieContainer .tCalories .total {
+            color: #B71C1C; }
+
+.graph-page {
+  z-index: 1; }
+  .graph-page .graph-pad {
+    max-width: 900px;
+    margin: auto; }
+    .graph-page .graph-pad section {
+      margin-top: 30px; }
+      .graph-page .graph-pad section .graph-header {
+        background-color: #8D6E63; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,11 @@
+.graph-page {
+  z-index: 1; }
+  .graph-page .graph-pad {
+    max-width: 900px;
+    margin: auto; }
+    .graph-page .graph-pad section {
+      margin-top: 30px; }
+      .graph-page .graph-pad section .graph-header {
+        background-color: #8D6E63; }
+
+/*# sourceMappingURL=graphs.css.map */

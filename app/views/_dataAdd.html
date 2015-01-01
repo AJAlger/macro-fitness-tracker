@@ -1,42 +1,41 @@
-<!-- Here is where I will add the list where users will enter the data that they want to be processed -->
-<md-content id="addPage" class="md-padding" ng-controller="dataAdd">
-
-    <div flex class="form-pad" layout-fill layout="column" style="z-index: 1" >
+<md-content id="addPage" class="md-padding add-page" ng-controller="dataAdd">
+    <div flex class="form-pad" layout-fill layout="column">
         <section class="md-whiteframe-z1">
             <md-toolbar class="add-header">
                 <div class="md-toolbar-tools">
                     <span>Enter Daily Macronutrients</span>
                 </div>
             </md-toolbar>
-            <md-content class="md-deep-orange-theme md-padding">
+            <md-content md-theme="deep-orange" class="md-padding">
                 <form>
                     <h3>Date</h3>
                     <div class="row" layout="row">
-                        <md-text-float class="md-deep-orange-theme" type="date" ng-model="date"></md-text-float>
+                        <md-text-float md-theme="deep-orange" type="date" ng-model="date"></md-text-float>
                     </div>
                     <h3>Enter Daily Macros in Grams</h3>
                     <div class="row" layout="row">
                        <md-text-float ng-repeat="macro in macros"
-                                      class="md-deep-orange-theme"
+                                      md-theme="deep-orange"
                                       label="{{macro.type}}"
                                       type="number"
                                       ng-model="macro.amount">
                        </md-text-float>
                     </div>
-                    <md-button class="md-primary submitMacros" md-theme="deep-orange">Submit</md-button>
+                    <md-button class="md-primary submitMacros md-raised" md-theme="deep-orange">Submit</md-button>
                 </form>
             </md-content>
-            <md-content class="md-deep-orange-theme md-padding">
+            <md-content md-theme="deep-orange" class="md-padding">
                 <md-divider></md-divider>
                 <h3>Total Calories from Macronutrients</h3>
                 <div class="calorieContainer" layout="row" layout-align="center center">
                     <div class="tCalories md-whiteframe-z1" ng-repeat="macro in macros">
                         <span>{{macro.type}}</span>
                         <div class="macros">{{macro.amount * macro.multiplier}}</div>
+                        <md-tooltip>{{macro.tip}}</md-tooltip>
                     </div>
                     <div class="tCalories md-whiteframe-z1">
                         <span>Total Calories</span>
-                        <div class="macros">{{total()}}</div>
+                        <div class="macros total">{{totals()}}</div>
                     </div>
                 </div>
                 <md-divider></md-divider>
@@ -44,7 +43,7 @@
                 <div class="calorieContainer" layout="row" layout-align="center center">
                     <div class="tCalories md-whiteframe-z1" ng-repeat="macro in macros">
                         <span>{{macro.type}}</span>
-                        <div class="macros">{{macro.amount * macro.multiplier / total() * 100 | number: 0}}%</div>
+                        <div class="macros">{{macro.amount * macro.multiplier / totals() * 100 | number: 0}}%</div>
                     </div>
                 </div>
             </md-content>

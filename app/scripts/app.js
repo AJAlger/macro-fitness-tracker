@@ -3,69 +3,86 @@ var app = angular.module('NutritionTracker', ['ngMaterial', 'ui.router']);
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise('/');
 
     // STATES
     $stateProvider
-        .state("index", {
-            url: "/",
-            templateUrl: "views/_landing.html"
+        .state('index', {
+            url: '/',
+            templateUrl: 'views/_landing.html'
         })
-        .state("data", {
-            url: "/macronutrients",
-            templateUrl: "views/_dataAdd.html",
-            controller: "dataAdd"
+        .state('data', {
+            url: '/macronutrients',
+            templateUrl: 'views/_dataAdd.html',
+            controller: 'dataAdd'
         })
-        .state("summary", {
-            url: "/summary",
-            templateUrl: "views/_dataGraphs.html"
+        .state('summary', {
+            url: '/summary',
+            templateUrl: 'views/_dataGraphs.html'
         });
 }]);
 
-app.controller("menuBar", ["$scope", "$mdSidenav", function($scope, $mdSidenav) {
+app.controller('menuBar', ['$scope', '$mdSidenav', function($scope, $mdSidenav) {
 
     $scope.items = [
-        {label: "Introduction", location: "index"},
-        {label: "Macronutrients", location: "data"},
-        {label: "Summary", location: "summary"}
+        {label: 'Introduction', location: 'index'},
+        {label: 'Macronutrients', location: 'data'},
+        {label: 'Summary', location: 'summary'}
     ];
 
     $scope.openMenu = function() {
-        $mdSidenav("left").toggle();
+        $mdSidenav('left').toggle();
     };
 
 }]);
 
-app.controller("dataAdd", ['$scope', function($scope) {
+app.controller('dataAdd', ['$scope', 'MacroCalculation', function($scope, MacroCalculation) {
 
-    $scope.date = new Date();
+    $scope.macros = MacroCalculation.macros();
 
-    $scope.macros = [
-        {type: 'Protein', amount: null, multiplier: 4},
-        {type: 'Carbohydrate', amount: null, multiplier: 4},
-        {type: 'Fat', amount: null, multiplier: 9}
+    $scope.totals = MacroCalculation.totals();
+
+}]);
+
+app.controller('dataGraphs', ['$scope', function($scope) {
+
+
+
+
+
+}]);
+
+app.factory('MacroCalculation', function() {
+   var macros = [
+        {type: 'Protein', amount: null, multiplier: 4, tip: 'Calories per gram of protein'},
+        {type: 'Carbohydrate', amount: null, multiplier: 4, tip: 'Calories per gram of carbohydrate'},
+        {type: 'Fat', amount: null, multiplier: 9, tip: 'Calories per gram of fat'}
     ];
 
-    $scope.total = function() {
-        var total = 0;
-        for(var i = 0, length = $scope.macros.length; i < length; i++) {
-            total = total + $scope.macros[i].amount * $scope.macros[i].multiplier;
-        }
-        return total;
+    var getMacros = function() {
+        return macros;
     };
 
+    var totals = function() {
+        var values = 0;
+        for(var i = 0, length = macros.length; i < length; i++) {
+          values = values + macros[i].amount * macros[i].multiplier;
+        }
+        return values;
+    };
 
+    var getTotals = function() {
+      return totals;
+    };
 
-}]);
+    return {
+        macros: getMacros,
+        totals: getTotals
+    }
 
-app.controller("dataGraphs", ["$scope", function($scope) {
+});
 
-}]);
-
-app.service("macroCalculation", ['$scope', function($scope) {
-
-
-
+app.directive('MacroGraphs', ['$scope', function($scope) {
 
 }]);
 

@@ -1,65 +1,73 @@
 @import "bourbon";
 
-.form-pad {
-  max-width: 900px;
-  margin: auto;
+.add-page {
+  z-index: 1;
 
-  section {
-    margin-top: 30px;
+  .form-pad {
+    max-width: 900px;
+    margin: auto;
 
-    .add-header {
-      background-color: #424242;
+    section {
+      margin-top: 30px;
 
-    }
+      .add-header {
+        background-color: #8D6E63;
 
-    form {
-      
-      .row {
+      }
 
-        md-input-group label {
-          font-size: 0.9em;
+      form {
+
+        .row {
+
+          md-input-group label {
+            font-size: 0.9em;
+
+          }
+
+          * {
+            font-size: inherit;
+            @include margin(null 8px null 8px);
+
+          }
 
         }
 
-        * {
-          font-size: inherit;
-          @include margin(null 8px null 8px);
-
+        .submitMacros {
+          margin: 1em;
+          min-width: 7em;
+          text-transform: capitalize;
         }
 
       }
 
-      .submitMacros {
-        margin: 1em;
-        min-width: 7em;
-        text-transform: capitalize;
-      }
+      div.calorieContainer {
+        max-width: inherit;
 
-    }
+        .tCalories {
+          display: inline-block;
+          width: 200px;
+          height: 150px;
+          padding: 8px;
+          @include margin(10px 10px 20px 10px);
 
-    div.calorieContainer {
-      max-width: inherit;
+          span {
+            font-weight: 700;
+            text-align: left;
+          }
 
+          .macros {
+            text-align: center;
+            font-family: $verdana;
+            font-size: 2.5em;
+            font-weight: 200;
+            @include margin(25px 25px 25px 25px);
+            word-wrap: break-word;
+          }
 
-      .tCalories {
-        display: inline-block;
-        width: 200px;
-        height: 150px;
-        padding: 8px;
-        @include margin(10px 10px 20px 10px);
+          .total {
+            color: #B71C1C;
+          }
 
-        span {
-          font-weight: 700;
-          text-align: left;
-        }
-
-        .macros {
-          text-align: center;
-          font-family: $verdana;
-          font-size: 2.5em;
-          font-weight: 200;
-          @include margin(25px 25px 25px 25px);
-          word-wrap: break-word;
         }
 
       }
@@ -67,7 +75,6 @@
     }
 
   }
-
 }
 
 
