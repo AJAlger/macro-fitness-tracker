@@ -81,7 +81,40 @@ app.factory('MacroCalculation', function() {
 
 });
 
-app.directive('MacroGraphs', ['$scope', function($scope) {
+app.directive('MacroGraphs', function() {
 
-}]);
+    return function(scope, element, attrs) {
+        var chartWidth = element.width();
+        var chart = d3.select(element[0]).append('svg')
+            .attr('class', 'chart')
+            .attr('width', chartWidth);
+
+        var drawChart = function(amounts) {
+            var allAmounts = _.map(amounts, function(a) {
+                return a.amount || 0;
+            });
+            var x = d3.scale.linear()
+                .domain([0.d3.max(allAmounts)])
+                .range([0, chartWidth]);
+
+            chart.selectAll('rect').remove();
+            chart.attr('height', 10 * allAmounts.length);
+
+            char.selectAll('rect')
+                .data(allAmounts)
+                .enter()
+                .append('rect')
+                .attr('y', function(d, i) { return i * 10; })
+                .attr('width', x)
+                .attr('height', 10);
+        };
+
+        $scope.$watch(attrs.miniChart, function(newVal) {
+            console.log('registering change on ' + attrs.miniChart);
+            drawChart(newVal);
+        }, true);
+
+    }
+
+});
 
