@@ -16,9 +16,13 @@
                     </div>
                     <h3>Enter Daily Macros in Grams</h3>
                     <div class="row" layout="row">
-                        <md-text-float class="md-deep-orange-theme" type="number" label="Protein" ng-model="macros.protein"></md-text-float>
-                        <md-text-float class="md-deep-orange-theme" type="number" label="Carbohydrates" ng-model="macros.carbs"></md-text-float>
-                        <md-text-float class="md-deep-orange-theme" type="number" label="Fat" ng-model="macros.fat"></md-text-float>
+                       <md-text-float ng-repeat="macro in macros"
+                                      class="md-deep-orange-theme"
+                                      label="{{macro.type}}"
+                                      type="number"
+                                      ng-model="macro.amount">
+
+                       </md-text-float>
                     </div>
                 </form>
             </md-content>
@@ -28,24 +32,14 @@
 
                 <div class="calorieContainer" layout="row" layout-align="center center">
 
-                    <div class="tCalories md-whiteframe-z1">
-                        <span>Protein</span>
-                        <div class="macros">{{macros.protein * 4}}</div>
-                    </div>
-
-                    <div class="tCalories md-whiteframe-z1">
-                        <span>Carbohydrates</span>
-                        <div class="macros">{{macros.carbs * 4}}</div>
-                    </div>
-
-                    <div class="tCalories md-whiteframe-z1">
-                        <span>Fat</span>
-                        <div class="macros">{{macros.fat * 9}}</div>
+                    <div class="tCalories md-whiteframe-z1" ng-repeat="macro in macros">
+                        <span>{{macro.type}}</span>
+                        <div class="macros">{{macro.amount * macro.multiplier}}</div>
                     </div>
 
                     <div class="tCalories md-whiteframe-z1">
                         <span>Total Calories</span>
-                        <div class="macros">{{(macros.protein * 4) + (macros.carbs * 4) + (macros.fat * 9)}}</div>
+                        <div class="macros">{{total()}}</div>
                     </div>
 
                 </div>
@@ -67,7 +61,6 @@
                         <span>Fat</span>
                         <div class="macros">{{macros.fat / (macros.protein + macros.carbs + macros.fat) * 100 | number: 0}}%</div>
                     </div>
-
 
 
                 </div>

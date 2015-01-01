@@ -41,11 +41,19 @@ app.controller("dataAdd", ['$scope', function($scope) {
     $scope.date = new Date();
 
     $scope.macros = [
-        {protein: ''},
-        {carbs: ''},
-        {fat: ''}
+        {type: 'Protein', amount: null, multiplier: 4},
+        {type: 'Carbohydrate', amount: null, multiplier: 4},
+        {type: 'Fat', amount: null, multiplier: 9}
     ];
 
+    $scope.total = function() {
+        var total = 0;
+        for(var i = 0, length = $scope.macros.length; i < length; i++) {
+            total = total + $scope.macros[i].amount * $scope.macros[i].multiplier;
+        }
+        return total;
+
+    };
 
 
 }]);
