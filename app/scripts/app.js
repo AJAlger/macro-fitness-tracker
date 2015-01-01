@@ -54,9 +54,6 @@ app.controller("dataAdd", ['$scope', function($scope) {
         return total;
     };
 
-    $scope.totalPercent = function() {
-        
-    };
 
 
 }]);
@@ -65,7 +62,8 @@ app.controller("dataGraphs", ["$scope", function($scope) {
 
 }]);
 
-app.factory("macroCalculation", ['$scope', function($scope) {
+app.service("macroCalculation", ['$scope', function($scope) {
+
 
 
 

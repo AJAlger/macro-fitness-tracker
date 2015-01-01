@@ -29,6 +29,12 @@
 
       }
 
+      .submitMacros {
+        margin: 1em;
+        min-width: 7em;
+        text-transform: capitalize;
+      }
+
     }
 
     div.calorieContainer {
@@ -55,12 +61,12 @@
           @include margin(25px 25px 25px 25px);
           word-wrap: break-word;
         }
+
       }
 
     }
 
   }
-
 
 }
 
