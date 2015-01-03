@@ -10,7 +10,10 @@
                 <form>
                     <h3 class="subtitles">Date</h3>
                     <div class="row" layout="row">
-                        <md-text-float md-theme="deep-orange" type="date" ng-model="macros.date"></md-text-float>
+                        <md-text-float
+                                md-theme="deep-orange"
+                                type="date"
+                                ng-model="macros.date"></md-text-float>
                     </div>
                     <h3 class="subtitles">Enter Daily Macros in Grams</h3>
                     <div class="row" layout="row">
@@ -21,7 +24,9 @@
                                       ng-model="macro.amount">
                        </md-text-float>
                     </div>
-                    <md-button ng-click="sendMacros()" class="md-primary submitMacros md-raised" md-theme="deep-orange">Submit</md-button>
+                    <md-button ng-click="sendMacros()"
+                               class="md-primary submitMacros md-raised"
+                               md-theme="deep-orange">Submit</md-button>
                 </form>
             </md-content>
             <md-content md-theme="deep-orange" class="md-padding total-macros">

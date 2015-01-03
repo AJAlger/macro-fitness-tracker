@@ -6,6 +6,7 @@ var express = require('express'),
     cookieParser = require('cookie-parser'),
     morgan = require('morgan'),
     moment = require('moment'),
+    methodoverride = require('method-override'),
     Nutrition = require('./app/routes/mongo.js');
 
 app.use(express.static(__dirname + '/app'));
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(morgan());
+app.use(methodoverride());
 
 
 mongoose.connect('mongodb://test:123456@ds029831.mongolab.com:29831/macronutrients',
