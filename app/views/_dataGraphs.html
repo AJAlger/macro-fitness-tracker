@@ -18,8 +18,8 @@
                             </tr>
                         </thead>
                         <tbody ng-controller="dataShow">
-                            <tr class="records" ng-repeat="result in results">
-                                <td>Date</td>
+                            <tr class="records" ng-repeat="result in results | orderBy: '-date'">
+                                <td>{{result.date}}</td>
                                 <td>{{result.protein}}</td>
                                 <td>{{result.carbohydrate}}</td>
                                 <td>{{result.fat}}</td>

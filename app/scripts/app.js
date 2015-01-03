@@ -44,6 +44,8 @@ app.controller('dataAdd', ['$scope', 'MacroCalculation', function($scope, MacroC
     $scope.macros = MacroCalculation.macros();
     $scope.totals = MacroCalculation.totals();
 
+
+
 }]);
 
 app.controller('dataShow', ['$scope', 'NutritionData', function($scope, NutritionData) {
@@ -54,7 +56,8 @@ app.controller('dataShow', ['$scope', 'NutritionData', function($scope, Nutritio
 }]);
 
 app.factory('MacroCalculation', function() {
-   var macros = [
+
+    var macros = [
         {type: 'Protein', amount: null, multiplier: 4, tip: 'Calories per gram of protein'},
         {type: 'Carbohydrate', amount: null, multiplier: 4, tip: 'Calories per gram of carbohydrate'},
         {type: 'Fat', amount: null, multiplier: 9, tip: 'Calories per gram of fat'}
@@ -85,7 +88,7 @@ app.factory('MacroCalculation', function() {
 
 app.factory('NutritionData', ['$http', function($http) {
 
-        return $http.get('/data/nutrition');
+    return $http.get('/data/nutrition');
 
 }]);
 

@@ -6,10 +6,7 @@ var NutritionSchema = new Schema({
     date: Date,
     protein: Number,
     carbohydrate: Number,
-    fat: Number,
-    percentProtein: Number,
-    percentCarbohydrate: Number,
-    percentFat: Number
+    fat: Number
 });
 
 

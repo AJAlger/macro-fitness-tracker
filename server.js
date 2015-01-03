@@ -5,6 +5,7 @@ var express = require('express'),
     mongoose = require('mongoose'),
     cookieParser = require('cookie-parser'),
     morgan = require('morgan'),
+    moment = require('moment'),
     Nutrition = require('./app/routes/mongo.js');
 
 app.use(express.static(__dirname + '/app'));
@@ -49,9 +50,6 @@ router.route('/nutrition')
         base.protein = request.body.protein;
         base.carbohydrate = request.body.carbohydrate;
         base.fat = request.body.fat;
-        base.percentProtein = request.body.percentProtein;
-        base.percentCarbohydrate = request.body.percentCarbohydrate;
-        base.percentFat = request.body.percentFat;
 
         base.save(function(err) {
             if (err)
@@ -90,9 +88,6 @@ router.route('/nutrition/:nutrition_id')
             base.protein = request.body.protein;
             base.carbohydrate = request.body.carbohydrate;
             base.fat = request.body.fat;
-            base.percentProtein = request.body.percentProtein;
-            base.percentCarbohydrate = request.body.percentCarbohydrate;
-            base.percentFat = request.body.percentFat;
 
             base.save(function(err) {
                 if(err)
