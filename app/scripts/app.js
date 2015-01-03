@@ -87,7 +87,6 @@ app.factory('NutritionData', ['$http', function($http) {
 
         return $http.get('/data/nutrition');
 
-
 }]);
 
 
