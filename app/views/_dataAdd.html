@@ -10,7 +10,7 @@
                 <form>
                     <h3 class="subtitles">Date</h3>
                     <div class="row" layout="row">
-                        <md-text-float md-theme="deep-orange" type="date" ng-model="date"></md-text-float>
+                        <md-text-float md-theme="deep-orange" type="date" ng-model="macros.date"></md-text-float>
                     </div>
                     <h3 class="subtitles">Enter Daily Macros in Grams</h3>
                     <div class="row" layout="row">
@@ -21,7 +21,7 @@
                                       ng-model="macro.amount">
                        </md-text-float>
                     </div>
-                    <md-button class="md-primary submitMacros md-raised" md-theme="deep-orange">Submit</md-button>
+                    <md-button ng-click="sendMacros()" class="md-primary submitMacros md-raised" md-theme="deep-orange">Submit</md-button>
                 </form>
             </md-content>
             <md-content md-theme="deep-orange" class="md-padding total-macros">
@@ -30,7 +30,7 @@
                 <div class="calorieContainer" layout="row" layout-align="center center">
                     <div class="tCalories md-whiteframe-z1" ng-repeat="macro in macros">
                         <span class="subtitles">{{macro.type}}</span>
-                        <div class="macros">{{macro.amount * macro.multiplier | number: 2}}</div>
+                        <div class="macros" >{{macro.amount * macro.multiplier | number: 2}}</div>
                         <md-tooltip>{{macro.tip}}</md-tooltip>
                     </div>
                     <div class="tCalories md-whiteframe-z1">

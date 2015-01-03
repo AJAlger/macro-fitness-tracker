@@ -45,6 +45,7 @@ router.route('/login')
 router.route('/nutrition')
 
 .post(function(request, response) {
+
         var base = new Nutrition;
         base.date = request.body.date;
         base.protein = request.body.protein;
@@ -55,8 +56,10 @@ router.route('/nutrition')
             if (err)
             response.send(err);
 
-            response.json({ message: "Information sent!"})
+            response.json({ message: "Information sent!"});
+
         });
+
     })
 
 .get(function(request, response) {
@@ -79,24 +82,6 @@ router.route('/nutrition/:nutrition_id')
         });
     })
 
-.put(function(request, response) {
-        Nutrition.findById(request.params.nutrition_id, function(err, base) {
-            if(err)
-            response.send(err);
-
-            base.date = request.body.date;
-            base.protein = request.body.protein;
-            base.carbohydrate = request.body.carbohydrate;
-            base.fat = request.body.fat;
-
-            base.save(function(err) {
-                if(err)
-                response.send(err);
-
-                response.json({message: 'Information Updated!'})
-            });
-        });
-    })
 
 .delete(function(request, response) {
         Nutrition.remove({_id: request.params.nutrition_id},

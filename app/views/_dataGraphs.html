@@ -1,4 +1,4 @@
-<md-content class="md-padding graph-page">
+<md-content class="md-padding graph-page" ng-controller="dataShow">
     <div flex class="graph-pad" md-theme="deep-orange" layout="column">
         <section class="md-whiteframe-z1">
             <md-toolbar class="graph-header">
@@ -17,13 +17,13 @@
                                 <th>Fat(g)</th>
                             </tr>
                         </thead>
-                        <tbody ng-controller="dataShow">
+                        <tbody>
                             <tr class="records" ng-repeat="result in results | orderBy: '-date'">
                                 <td>{{result.date}}</td>
                                 <td>{{result.protein}}</td>
                                 <td>{{result.carbohydrate}}</td>
                                 <td>{{result.fat}}</td>
-                                <td><md-button class="md-warn" ng-click="delete()">Delete Record</md-button></td>
+                                <td><md-button class="md-warn remove-button" ng-click="deleteData($index)">Delete Record</md-button></td>
                             </tr>
                         </tbody>
                     </table>

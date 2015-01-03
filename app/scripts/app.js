@@ -4,8 +4,6 @@ var app = angular.module('NutritionTracker', ['ngMaterial', 'ui.router']);
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-
-
     $urlRouterProvider.otherwise('/');
 
     // STATES
@@ -28,9 +26,9 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 app.controller('menuBar', ['$scope', '$mdSidenav', function($scope, $mdSidenav) {
 
     $scope.items = [
-        {label: 'Introduction', location: 'index'},
-        {label: 'Macronutrients', location: 'data'},
-        {label: 'Summary', location: 'summary'}
+        {'label': 'Introduction', 'location': 'index'},
+        {'label': 'Macronutrients', 'location': 'data'},
+        {'label': 'Summary', 'location': 'summary'}
     ];
 
     $scope.openMenu = function() {
@@ -39,12 +37,19 @@ app.controller('menuBar', ['$scope', '$mdSidenav', function($scope, $mdSidenav) 
 
 }]);
 
-app.controller('dataAdd', ['$scope', 'MacroCalculation', function($scope, MacroCalculation) {
+app.controller('dataAdd', ['$scope', 'MacroCalculation', '$http', function($scope, MacroCalculation, $http) {
 
     $scope.macros = MacroCalculation.macros();
     $scope.totals = MacroCalculation.totals();
 
-
+    $scope.sendMacros = function() { // Not working ... Sends empty data
+        var mData = JSON.stringify({type: $scope.macros.type, amount: $scope.macros.amount});
+        $http.post('/data/nutrition', mData).success(function(mData, status) {
+            console.log(mData, status);
+        }).error(function(mData, status) {
+            console.log('Error: Check your code dude!', status);
+        });
+    };
 
 }]);
 
@@ -58,9 +63,9 @@ app.controller('dataShow', ['$scope', 'NutritionData', function($scope, Nutritio
 app.factory('MacroCalculation', function() {
 
     var macros = [
-        {type: 'Protein', amount: null, multiplier: 4, tip: 'Calories per gram of protein'},
-        {type: 'Carbohydrate', amount: null, multiplier: 4, tip: 'Calories per gram of carbohydrate'},
-        {type: 'Fat', amount: null, multiplier: 9, tip: 'Calories per gram of fat'}
+        {'type': 'Protein', 'amount': null, 'multiplier': 4, 'tip': 'Calories per gram of protein'},
+        {'type': 'Carbohydrate', 'amount': null, 'multiplier': 4, 'tip': 'Calories per gram of carbohydrate'},
+        {'type': 'Fat', 'amount': null, 'multiplier': 9, 'tip': 'Calories per gram of fat'}
     ];
 
     var getMacros = function() {
@@ -88,7 +93,7 @@ app.factory('MacroCalculation', function() {
 
 app.factory('NutritionData', ['$http', function($http) {
 
-    return $http.get('/data/nutrition');
+    return  $http.get('/data/nutrition');
 
 }]);
 

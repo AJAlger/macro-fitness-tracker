@@ -1,0 +1,11 @@
+.outer-container {
+  margin: auto;
+  max-width: 950px; }
+  .outer-container .title {
+    font-size: 34px;
+    margin-top: 70px;
+    font-weight: 300;
+    line-height: 30px;
+    margin-bottom: 40px; }
+
+/*# sourceMappingURL=intro.css.map */

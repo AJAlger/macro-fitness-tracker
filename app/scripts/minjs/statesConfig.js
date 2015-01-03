@@ -1,0 +1,1 @@
+var app=angular.module("NutritionTracker").config(["$stateProvider",function(t){t.state("index",{url:"/",templateUrl:"views/_landing.html"}).state("data",{url:"/macronutrients",templateUrl:"views/_dataAdd.html",controller:"dataAdd"}).state("summary",{url:"/summary",templateUrl:"views/_dataGraphs.html"})}]);
