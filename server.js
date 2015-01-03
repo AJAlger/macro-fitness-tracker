@@ -4,16 +4,25 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     cookieParser = require('cookie-parser'),
-    Nutrition = require('./app/routes/');
+    morgan = require('morgan'),
+    Nutrition = require('./app/routes/mongo.js');
 
 app.use(express.static(__dirname + '/app'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(morgan());
 
 
-mongoose.connect('mongodb://test:123456@ds029831.mongolab.com:29831/macronutrients');
+mongoose.connect('mongodb://test:123456@ds029831.mongolab.com:29831/macronutrients',
+            function(err) {
+                if(err) {
+                    console.log('Connection error: ', err);
+                } else {
+                    console.log('Connection successful');
+                }
+            });
 
 
 var router = express.Router();
@@ -27,7 +36,6 @@ router.get('/', function(request, response) {
 router.route('/login')
 
 .post(function(request, response) {
-
 
 
     });
@@ -93,9 +101,19 @@ router.route('/nutrition/:nutrition_id')
                 response.json({message: 'Information Updated!'})
             });
         });
+    })
+
+.delete(function(request, response) {
+        Nutrition.remove({_id: request.params.nutrition_id},
+            function(err, base) {
+            if(err)
+            response.send(err);
+
+                response.json({message: "Successfully deleted"});
+        });
     });
 
 app.use('/data', router);
 
 app.listen(9001); // Not used if Gulp is activated - it is bypassed
-exports = module.exports = app; // This is needed otherwise the index.js for routes will not work
+exports = module.exports = app; // This is needed otherwise the mongo.js for routes will not work

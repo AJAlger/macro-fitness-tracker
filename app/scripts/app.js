@@ -1,7 +1,10 @@
+"use strict";
 
 var app = angular.module('NutritionTracker', ['ngMaterial', 'ui.router']);
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+
+
 
     $urlRouterProvider.otherwise('/');
 
@@ -43,11 +46,10 @@ app.controller('dataAdd', ['$scope', 'MacroCalculation', function($scope, MacroC
 
 }]);
 
-app.controller('dataGraphs', ['$scope', function($scope) {
+app.controller('dataShow', ['$scope', 'NutritionData', function($scope, NutritionData) {
 
-
-
-
+    NutritionData.success(function(data){$scope.results = data;})
+        .error(function(data, status){console.log(data, status); $scope.results = [];});
 
 }]);
 
@@ -80,6 +82,20 @@ app.factory('MacroCalculation', function() {
     }
 
 });
+
+app.factory('NutritionData', ['$http', function($http) {
+
+        return $http.get('/data/nutrition');
+
+
+}]);
+
+
+app.controller('dataGraphs', ['$scope', function($scope) {
+
+
+}]);
+
 
 app.directive('MacroGraphs', function() {
 
