@@ -235,9 +235,15 @@ input[type="submit"] {
       margin-top: 50px; }
       .graph-page .graph-pad section .graph-header {
         background-color: #8D6E63; }
-    .graph-page .graph-pad .table th {
+    .graph-page .graph-pad .table-border th {
       font-weight: 400; }
-    .graph-page .graph-pad .table .remove-button {
-      text-transform: capitalize; }
+    .graph-page .graph-pad .table-border tbody {
+      background-color: white; }
+      .graph-page .graph-pad .table-border tbody tr:nth-child(even) {
+        background-color: #f2f2f2; }
+      .graph-page .graph-pad .table-border tbody td {
+        padding: 0.75em 1em; }
+      .graph-page .graph-pad .table-border tbody .remove-button {
+        text-transform: capitalize; }
 
 /*# sourceMappingURL=main.css.map */

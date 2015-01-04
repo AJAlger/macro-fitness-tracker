@@ -16,16 +16,33 @@
       }
 
     }
-    .table {
+    .table-border {
+      $table-background: $base-background-color;
+      $table-stripe-color: darken($table-background, 5);
+      $table-padding: .75em 1em;
 
       th {
         font-weight: 400;
       }
 
-      .remove-button {
-        text-transform: capitalize;
-      }
+      tbody {
 
+        background-color: $table-background;
+
+        tr:nth-child(even) {
+          background-color: $table-stripe-color;
+        }
+
+        td {
+          padding: $table-padding;
+        }
+
+          .remove-button {
+            text-transform: capitalize;
+          }
+      }
     }
   }
 }
+
+

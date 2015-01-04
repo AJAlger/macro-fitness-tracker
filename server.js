@@ -7,8 +7,11 @@ var express = require('express'),
     morgan = require('morgan'),
     moment = require('moment'),
     methodoverride = require('method-override'),
+    errorHandler = require('errorhandler');
     Nutrition = require('./app/routes/mongo.js');
 
+// =========================CONFIGURATION===========================//
+// =================================================================//
 app.use(express.static(__dirname + '/app'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -17,6 +20,9 @@ app.use(cookieParser());
 app.use(morgan());
 app.use(methodoverride());
 
+if (process.env.NODE_ENV === 'development') {
+    app.use(errorHandler());
+}
 
 mongoose.connect('mongodb://test:123456@ds029831.mongolab.com:29831/macronutrients',
             function(err) {
@@ -27,25 +33,21 @@ mongoose.connect('mongodb://test:123456@ds029831.mongolab.com:29831/macronutrien
                 }
             });
 
+// ==========================ROUTER=================================//
+// =================================================================//
 
 var router = express.Router();
+// ================================= //
 
-router.get('/', function(request, response) {
-    response.json('This is working. No worries!');
-    console.log("cookies: ", request.cookies);
-
-});
-
-router.route('/login')
-
-.post(function(request, response) {
+// NEED A LOGIN PAGE ROUTE HERE
 
 
-    });
+// ================================= //
 
-
+// ACCESS THE MAIN ROUTE FOR THE INFORMATION PASSED AND ACCESSED
 router.route('/nutrition')
 
+// ===========POST INFORMATION====================== //
 .post(function(request, response) {
 
         var base = new Nutrition;
@@ -64,6 +66,7 @@ router.route('/nutrition')
 
     })
 
+// ===========ACCESS INFORMATION====================== //
 .get(function(request, response) {
         Nutrition.find(function(err, nutritionInformation) {
            if(err)
@@ -73,8 +76,11 @@ router.route('/nutrition')
        });
     });
 
+// =========NEW ROUTE TO ACCESS INDIVIDUAL ITEMS======================== //
+
 router.route('/nutrition/:nutrition_id')
 
+// ===========ACCESS INFORMATION====================== //
 .get(function(request, response) {
         Nutrition.findById(request.params.nutrition_id, function(err, base) {
           if(err)
@@ -84,7 +90,7 @@ router.route('/nutrition/:nutrition_id')
         });
     })
 
-
+// ==============DELETE INFORMATION=================== //
 .delete(function(request, response) {
         Nutrition.remove({_id: request.params.nutrition_id},
             function(err, base) {
@@ -95,7 +101,9 @@ router.route('/nutrition/:nutrition_id')
         });
     });
 
+// =============WHERE TO ACCESS THE API==================== //
 app.use('/data', router);
 
+// =============LISTEN FOR EVENTS ON 9001 IF RUNNING NODE==================== //
 app.listen(9001); // Not used if Gulp is activated - it is bypassed
-exports = module.exports = app; // This is needed otherwise the mongo.js for routes will not work
+exports = module.exports = app; // This is needed otherwise Mongoose Code will not work
