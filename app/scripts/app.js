@@ -23,13 +23,9 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         });
 }]);
 
-app.controller('menuBar', ['$scope', '$mdSidenav', function($scope, $mdSidenav) {
+app.controller('menuBar', ['$scope', '$mdSidenav', 'MenuItems', function($scope, $mdSidenav, MenuItems) {
 
-    $scope.items = [
-        {'label': 'Introduction', 'location': 'index'},
-        {'label': 'Macronutrients', 'location': 'data'},
-        {'label': 'Summary', 'location': 'summary'}
-    ];
+    $scope.items = MenuItems.items();
 
     $scope.openMenu = function() {
         $mdSidenav('left').toggle();
@@ -37,19 +33,12 @@ app.controller('menuBar', ['$scope', '$mdSidenav', function($scope, $mdSidenav) 
 
 }]);
 
-app.controller('dataAdd', ['$scope', 'MacroCalculation', '$http', function($scope, MacroCalculation, $http) {
+app.controller('dataAdd', ['$scope', 'MacroCalculation', function($scope, MacroCalculation) {
 
     $scope.macros = MacroCalculation.macros();
     $scope.totals = MacroCalculation.totals();
 
-    $scope.sendMacros = function() { // Not working ... Sends empty data
-        var mData = JSON.stringify({type: $scope.macros.type, amount: $scope.macros.amount});
-        $http.post('/data/nutrition', mData).success(function(mData, status) {
-            console.log(mData, status);
-        }).error(function(mData, status) {
-            console.log('Error: Check your code dude!', status);
-        });
-    };
+    // do calc inside - set values to scope
 
 }]);
 
@@ -60,6 +49,24 @@ app.controller('dataShow', ['$scope', 'NutritionData', function($scope, Nutritio
 
 }]);
 
+app.service('MenuItems', [function() {
+
+    var menuItems = [
+        {'label': 'Introduction', 'location': 'index'},
+        {'label': 'Macronutrients', 'location': 'data'},
+        {'label': 'Summary', 'location': 'summary'}
+    ];
+
+    var getMenuItems = function() {
+      return menuItems;
+    };
+
+    return {
+        items: getMenuItems
+    }
+
+}]);
+
 app.factory('MacroCalculation', function() {
 
     var macros = [
@@ -67,6 +74,7 @@ app.factory('MacroCalculation', function() {
         {'type': 'Carbohydrate', 'amount': null, 'multiplier': 4, 'tip': 'Calories per gram of carbohydrate'},
         {'type': 'Fat', 'amount': null, 'multiplier': 9, 'tip': 'Calories per gram of fat'}
     ];
+    
 
     var getMacros = function() {
         return macros;
@@ -79,6 +87,7 @@ app.factory('MacroCalculation', function() {
         }
         return values;
     };
+
 
     var getTotals = function() {
       return totals;

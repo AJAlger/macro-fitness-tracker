@@ -19,14 +19,15 @@
     .table-border {
       $table-background: $base-background-color;
       $table-stripe-color: darken($table-background, 5);
-      $table-padding: .75em 1em;
+      $table-padding: 0 0.7em;
 
       th {
+        padding: $table-padding;
         font-weight: 400;
       }
 
       tbody {
-
+        font-size: 14px;
         background-color: $table-background;
 
         tr:nth-child(even) {
@@ -35,9 +36,12 @@
 
         td {
           padding: $table-padding;
+
         }
 
           .remove-button {
+            margin: 1em;
+            min-width: 8em;
             text-transform: capitalize;
           }
       }
