@@ -74,7 +74,7 @@ app.factory('MacroCalculation', function() {
         {'type': 'Carbohydrate', 'amount': null, 'multiplier': 4, 'tip': 'Calories per gram of carbohydrate'},
         {'type': 'Fat', 'amount': null, 'multiplier': 9, 'tip': 'Calories per gram of fat'}
     ];
-    
+
 
     var getMacros = function() {
         return macros;
