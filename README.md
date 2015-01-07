@@ -11,7 +11,7 @@ This application calculates your daily caloric intake and macronutrients to prov
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Abdullah J. Alger
+Copyright (c) 2015 Abdullah J. Alger
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
