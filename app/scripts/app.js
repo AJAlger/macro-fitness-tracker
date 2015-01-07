@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module('NutritionTracker', ['ngMaterial', 'ui.router']);
+var app = angular.module('NutritionTracker', ['ngMaterial', 'ui.router', 'ngResource']);
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
@@ -35,8 +35,12 @@ app.controller('menuBar', ['$scope', '$mdSidenav', 'MenuItems', function($scope,
 
 app.controller('dataAdd', ['$scope', 'MacroCalculation', function($scope, MacroCalculation) {
 
+
+    $scope.date = new Date();
     $scope.macros = MacroCalculation.macros();
     $scope.totals = MacroCalculation.totals();
+
+
 
     // do calc inside - set values to scope
 
@@ -80,13 +84,17 @@ app.factory('MacroCalculation', function() {
         return macros;
     };
 
-    var totals = function() {
-        var values = 0;
-        for(var i = 0, length = macros.length; i < length; i++) {
-          values = values + macros[i].amount * macros[i].multiplier;
-        }
-        return values;
+
+
+    var totals = {
+        //    var values = 0;
+        //    for(var i = 0, length = macros.length; i < length; i++) {
+        //      values = values + macros[i].amount * macros[i].multiplier;
+        //    }
+        //    return values;
     };
+
+
 
 
     var getTotals = function() {
