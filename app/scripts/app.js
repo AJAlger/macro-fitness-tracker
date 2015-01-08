@@ -81,21 +81,21 @@ app.factory('MacroCalculation', function() {
             'amount': null,
             'multiplier': 4,
             'tip': 'Calories per gram of protein',
-            'total': function() {return macros.amount * macros.multiplier;}
+            'total': function() {return this.amount * this.multiplier;}
         },
         {
             'type': 'Carbohydrate',
             'amount': null,
             'multiplier': 4,
             'tip': 'Calories per gram of carbohydrate',
-            'total': function() {return macros.amount * macros.multiplier;}
+            'total': function() {return this.amount * this.multiplier;}
         },
         {
             'type': 'Fat',
             'amount': null,
             'multiplier': 9,
             'tip': 'Calories per gram of fat',
-            'total': function() {return macros.amount * macros.multiplier;}
+            'total': function() {return this.amount * this.multiplier;}
         }];
 
 
