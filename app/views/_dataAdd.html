@@ -49,7 +49,7 @@
                <div class="calorieContainer" layout="row" layout-align="center center">
                    <div class="tCalories md-whiteframe-z1" ng-repeat="macro in macros">
                        <span class="subtitles">{{macro.type}}</span>
-                       <div class="macros">{{macro.amount * macro.multiplier / totals() * 100 | number: 0}}%</div>
+                       <div class="macros">{{macro.total() / totals() * 100 | number: 0}}%</div>
                    </div>
                </div>
            </md-content>

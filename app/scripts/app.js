@@ -38,14 +38,6 @@ app.controller('dataAdd', ['$scope', 'MacroCalculation', function($scope, MacroC
     $scope.macros = MacroCalculation.macros();
     $scope.totals = MacroCalculation.totals();
 
-    $scope.calculate = function() {
-        var total = 0;
-        for (var i = 0; i < $scope.macros.length; i += 1) {
-           total += $scope.macros[i].amount * $scope.macros[i].multiplier;
-        }
-        return total;
-    }
-
 }]);
 
 app.controller('dataShow', ['$scope', 'NutritionData', function($scope, NutritionData) {
