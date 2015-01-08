@@ -35,14 +35,16 @@ app.controller('menuBar', ['$scope', '$mdSidenav', 'MenuItems', function($scope,
 
 app.controller('dataAdd', ['$scope', 'MacroCalculation', function($scope, MacroCalculation) {
 
-
-    $scope.date = new Date();
     $scope.macros = MacroCalculation.macros();
     $scope.totals = MacroCalculation.totals();
 
-
-
-    // do calc inside - set values to scope
+    $scope.calculate = function() {
+        var total = 0;
+        for (var i = 0; i < $scope.macros.length; i += 1) {
+           total += $scope.macros[i].amount * $scope.macros[i].multiplier;
+        }
+        return total;
+    }
 
 }]);
 
@@ -74,32 +76,44 @@ app.service('MenuItems', [function() {
 app.factory('MacroCalculation', function() {
 
     var macros = [
-        {'type': 'Protein', 'amount': null, 'multiplier': 4, 'tip': 'Calories per gram of protein'},
-        {'type': 'Carbohydrate', 'amount': null, 'multiplier': 4, 'tip': 'Calories per gram of carbohydrate'},
-        {'type': 'Fat', 'amount': null, 'multiplier': 9, 'tip': 'Calories per gram of fat'}
-    ];
+        {
+            'type': 'Protein',
+            'amount': null,
+            'multiplier': 4,
+            'tip': 'Calories per gram of protein',
+            'total': function() {return macros.amount * macros.multiplier;}
+        },
+        {
+            'type': 'Carbohydrate',
+            'amount': null,
+            'multiplier': 4,
+            'tip': 'Calories per gram of carbohydrate',
+            'total': function() {return macros.amount * macros.multiplier;}
+        },
+        {
+            'type': 'Fat',
+            'amount': null,
+            'multiplier': 9,
+            'tip': 'Calories per gram of fat',
+            'total': function() {return macros.amount * macros.multiplier;}
+        }];
 
 
     var getMacros = function() {
         return macros;
     };
 
-
-
-    var totals = {
-        //    var values = 0;
-        //    for(var i = 0, length = macros.length; i < length; i++) {
-        //      values = values + macros[i].amount * macros[i].multiplier;
-        //    }
-        //    return values;
+    var totals = function() {
+        for (var i = 0, values = 0, length = macros.length; i < length; i += 1) {
+            values += macros[i].amount * macros[i].multiplier;
+        }
+           return values;
     };
-
-
-
 
     var getTotals = function() {
       return totals;
     };
+
 
     return {
         macros: getMacros,
