@@ -36,13 +36,12 @@
 
                   <div class="tCalories md-whiteframe-z1" ng-repeat="macro in macros">
                         <span class="subtitles">{{macro.type}}</span>
-                        <div class="macros" >{{   }}</div>
+                        <div class="macros" >{{macro.total}}</div>
                         <md-tooltip>{{macro.tip}}</md-tooltip>
                     </div>
-
-                    <div class="tCalories md-whiteframe-z1">
+                  <div class="tCalories md-whiteframe-z1">
                        <span class="subtitles">Total Calories</span>
-                       <div class="macros total">{{totals() | number: 2}}</div>
+                       <div class="macros total">{{ totals() | number: 2 }}</div>
                    </div>
                </div>
                <md-divider></md-divider>
