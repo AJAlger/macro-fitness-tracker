@@ -45,6 +45,8 @@ app.controller('dataShow', ['$scope', 'NutritionData', function($scope, Nutritio
     NutritionData.success(function(data){$scope.results = data;})
         .error(function(data, status){console.log(data, status); $scope.results = [];});
 
+
+
 }]);
 
 app.service('MenuItems', [function() {
@@ -106,7 +108,6 @@ app.factory('MacroCalculation', function() {
       return totals;
     };
 
-
     return {
         macros: getMacros,
         totals: getTotals
@@ -117,6 +118,8 @@ app.factory('MacroCalculation', function() {
 app.factory('NutritionData', ['$http', function($http) {
 
     return  $http.get('/data/nutrition');
+
+    // Write all of the HTTP POST, GET and individual IDs here.
 
 }]);
 

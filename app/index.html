@@ -15,10 +15,10 @@
 <body layout="row">
 
 <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
-    <md-toolbar class="md-deep-orange-theme">
+    <md-toolbar md-theme="deep-orange">
         <h2 class="md-toolbar-tools">Menu</h2>
     </md-toolbar>
-    <md-content ng-controller="menuBar" class="md-deep-orange-theme">
+    <md-content ng-controller="menuBar" md-theme="deep-orange">
         <md-button layout-align="left" ng-repeat="item in items" ui-sref="{{item.location}}" class="menu-item"
            md-ink-ripple="#bbb" aria-hidden="false">
             <span>{{item.label}}</span>
