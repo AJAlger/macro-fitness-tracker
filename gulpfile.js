@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename'),
-    neat = require('node-neat').includePaths;
+    neat = require('node-neat').includePaths,
+    sourcemaps = require('gulp-sourcemaps');
 
 var myApp = require('./server.js');
 // No need to load Bourbon here since Neat is included.
@@ -45,7 +46,9 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
     return gulp.src(paths.script + '*.js') // Path to Script folder
         .pipe(plumber()) // Checks for any errors and notifies if there are
+        .pipe(sourcemaps.init())
         .pipe(uglify())// Makes all scripts into a single line for minimizing file size
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.script + '/minjs')) // Puts files into and creates new Minjs folder
         .pipe(livereload()); // Reloading Gulp each time a change has been made
 });

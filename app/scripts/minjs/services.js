@@ -1,1 +1,0 @@
-angular.module("NutritionTracker",[]).factory("macros",["$http",function(t){return{get:function(){return t.get("/data/nutrition")},post:function(n){return t.post("/data/nutrition",n)},"delete":function(n){return t.delete("/data/nutrition"+n)}}}]);
