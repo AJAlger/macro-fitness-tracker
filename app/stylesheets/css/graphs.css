@@ -151,7 +151,8 @@ input[type="submit"] {
   z-index: 1; }
   .graph-page .graph-pad {
     max-width: 900px;
-    margin: auto; }
+    margin: auto;
+    /* This is where the Graph CSS will be inserted */ }
     .graph-page .graph-pad section {
       margin-top: 50px; }
       .graph-page .graph-pad section .graph-header {

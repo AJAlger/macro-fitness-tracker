@@ -5,6 +5,7 @@ angular.module('NutritionTracker', [
         'ngMaterial',
         'ui.router',
         'ngResource'
+
     ]);
 
 })();
