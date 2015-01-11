@@ -7,9 +7,12 @@
     angular.module('NutritionTracker')
 
         // Factory to send HTTP requests to and from the server
-        .factory('NutritionData', ['$http', function($http) {
+        .factory('NutritionData', ['$resource', function($resource) {
 
-        return $http.get('data/nutrition');
+            return $resource('data/nutrition', {}, {
+                query: {method: 'GET', isArray: true}
+            });
+
 
         }]);
 
