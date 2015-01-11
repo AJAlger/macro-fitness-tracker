@@ -8,8 +8,11 @@
 
         .controller('dataShow', ['$scope', 'NutritionData', function($scope, NutritionData) {
 
-            NutritionData.success(function(data){$scope.results = data;})
-                .error(function(data, status){console.log(data, status); $scope.results = [];});
+           // NutritionData.success(function(data){$scope.results = data;})
+             //   .error(function(data, status){console.log(data, status); $scope.results = [];});
+
+            $scope.results = NutritionData.showData();
+
 
         }]);
 })();

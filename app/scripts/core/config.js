@@ -6,7 +6,8 @@
 
     angular.module('NutritionTracker')
 
-    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    .config(['$stateProvider', '$urlRouterProvider',
+            function($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');
 
