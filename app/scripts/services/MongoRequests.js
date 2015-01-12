@@ -5,8 +5,6 @@
     'use strict';
 
     angular.module('NutritionTracker')
-
-        // Factory to send HTTP requests to and from the server
         .factory('NutritionData', ['$resource', function($resource) {
 
             return $resource('data/nutrition', {}, {
@@ -15,16 +13,5 @@
 
 
         }]);
-
-
-
-/////////////////////////////////////////////////////////////////////
-
-
-
-            // Write all of the HTTP POST, GET and individual IDs here.
-
-
-
 
 })();
