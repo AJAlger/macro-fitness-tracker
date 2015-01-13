@@ -7,8 +7,9 @@
     angular.module('NutritionTracker')
         .factory('NutritionData', ['$resource', function($resource) {
 
-            return $resource('data/nutrition', {}, {
-                query: {method: 'GET', isArray: true}
+            return $resource('data/nutrition/:nutrition_id', {}, {
+                query: {method: 'GET', isArray: true},
+                save: {method: 'POST'}
             });
 
 
