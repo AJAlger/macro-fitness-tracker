@@ -1,6 +1,7 @@
 node_modules
 bower_components
-.idea
+.c9
 .DS_Store
+app/stylesheets/scss/base
 .sass-cache/
-app/stylesheets/scss/base/
+.idea
