@@ -1,65 +1,175 @@
-/*
-Error: File to import not found or unreadable: base/base.
-       Load paths:
-         /home/ubuntu/workspace/styles
-         /home/ubuntu/workspace/node_modules/node-bourbon/assets/stylesheets
-         /home/ubuntu/workspace/node_modules/node-neat/assets/stylesheets
-         /home/ubuntu/workspace/app/stylesheets/scss
-         /tmp/gulp-ruby-sass
-        on line 2 of /tmp/gulp-ruby-sass/graphs.scss
+@charset "UTF-8";
+/* Bitters 0.10.0
+ * http://bitters.bourbon.io
+ * Copyright 2013–2014 thoughtbot, inc.
+ * MIT License */
+button,
+input[type="submit"] {
+  -webkit-font-smoothing: antialiased;
+  background-color: #477DCA;
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0.75em 1em;
+  text-decoration: none; }
+  button:hover,
+  input[type="submit"]:hover {
+    background-color: #2c5999;
+    color: white; }
+  button:disabled,
+  input[type="submit"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; }
 
-1: @import "bourbon";
-2: @import "base/base";
-3: 
-4: .graph-page {
-5:   z-index: 1;
-6: 
-7:   .graph-pad {
+body {
+  -webkit-font-smoothing: antialiased;
+  background-color: white;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.5; }
 
-Backtrace:
-/tmp/gulp-ruby-sass/graphs.scss:2
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/import_node.rb:66:in `rescue in import'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/import_node.rb:45:in `import'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/import_node.rb:28:in `imported_file'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/import_node.rb:37:in `css_import?'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:301:in `visit_import'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/stack.rb:79:in `block in with_base'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/stack.rb:115:in `with_frame'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/stack.rb:79:in `with_base'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/visitors/base.rb:52:in `map'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/root_node.rb:36:in `css_tree'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/engine.rb:368:in `_render_with_sourcemap'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/engine.rb:285:in `render_with_sourcemap'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/plugin/compiler.rb:489:in `update_stylesheet'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/plugin/compiler.rb:209:in `each'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/plugin.rb:82:in `update_stylesheets'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/exec/sass_scss.rb:350:in `watch_or_update'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/exec/sass_scss.rb:50:in `process_result'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/exec/base.rb:52:in `parse'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/lib/sass/exec/base.rb:19:in `parse!'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/gems/sass-3.4.7/bin/sass:13:in `<top (required)>'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/bin/sass:23:in `load'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/bin/sass:23:in `<main>'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/bin/ruby_executable_hooks:15:in `eval'
-/usr/local/rvm/gems/ruby-2.1.4@rails4/bin/ruby_executable_hooks:15:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: base/base.\A        Load paths:\A          /home/ubuntu/workspace/styles\A          /home/ubuntu/workspace/node_modules/node-bourbon/assets/stylesheets\A          /home/ubuntu/workspace/node_modules/node-neat/assets/stylesheets\A          /home/ubuntu/workspace/app/stylesheets/scss\A          /tmp/gulp-ruby-sass\A         on line 2 of /tmp/gulp-ruby-sass/graphs.scss\A \A 1: @import \"bourbon\";\A 2: @import \"base/base\";\A 3: \A 4: .graph-page {\A 5:   z-index: 1;\A 6: \A 7:   .graph-pad {"; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  line-height: 1.25;
+  margin: 0;
+  text-rendering: optimizeLegibility; }
+
+h1 {
+  font-size: 2.25em; }
+
+h2 {
+  font-size: 2em; }
+
+h3 {
+  font-size: 1.75em; }
+
+h4 {
+  font-size: 1.5em; }
+
+h5 {
+  font-size: 1.25em; }
+
+h6 {
+  font-size: 1em; }
+
+p {
+  margin: 0 0 0.75em; }
+
+a {
+  -webkit-transition: color 0.1s linear;
+  -moz-transition: color 0.1s linear;
+  transition: color 0.1s linear;
+  color: #477DCA;
+  text-decoration: none; }
+  a:hover {
+    color: #2c5999; }
+  a:active, a:focus {
+    color: #2c5999;
+    outline: none; }
+
+hr {
+  border-bottom: 1px solid #DDD;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: 1.5em 0; }
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%; }
+
+blockquote {
+  border-left: 2px solid #DDD;
+  color: #595959;
+  margin: 1.5em 0;
+  padding-left: 0.75em; }
+
+cite {
+  color: #737373;
+  font-style: italic; }
+  cite:before {
+    content: "\2014 \00A0"; }
+
+table {
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%; }
+
+th {
+  border-bottom: 1px solid #b7b7b7;
+  font-weight: bold;
+  padding: 0.75em 0;
+  text-align: left; }
+
+td {
+  border-bottom: 1px solid #DDD;
+  padding: 0.75em 0; }
+
+tr,
+td,
+th {
+  vertical-align: middle; }
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+dl {
+  margin-bottom: 0.75em; }
+  dl dt {
+    font-weight: bold;
+    margin-top: 0.75em; }
+  dl dd {
+    margin: 0; }
+
+button,
+input[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap; }
+
+.graph-page {
+  z-index: 1; }
+  .graph-page .graph-pad {
+    max-width: 900px;
+    margin: auto;
+    /* This is where the Graph CSS will be inserted */ }
+    .graph-page .graph-pad section {
+      margin-top: 50px; }
+      .graph-page .graph-pad section .graph-header {
+        background-color: #8D6E63; }
+    .graph-page .graph-pad .table-border th {
+      padding: 0 0.7em;
+      font-weight: 400; }
+    .graph-page .graph-pad .table-border tbody {
+      font-size: 14px;
+      background-color: white; }
+      .graph-page .graph-pad .table-border tbody tr:nth-child(even) {
+        background-color: #f2f2f2; }
+      .graph-page .graph-pad .table-border tbody td {
+        padding: 0 0.7em; }
+      .graph-page .graph-pad .table-border tbody .remove-button {
+        margin: 1em;
+        min-width: 8em;
+        text-transform: capitalize; }
+
+/*# sourceMappingURL=graphs.css.map */
