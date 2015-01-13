@@ -4,10 +4,8 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     cookieParser = require('cookie-parser'),
-    morgan = require('morgan'),
-    moment = require('moment'),
     methodoverride = require('method-override'),
-    errorHandler = require('errorhandler');
+    errorHandler = require('errorhandler'),
     Nutrition = require('./app/routes/mongo.js');
 
 // =========================CONFIGURATION===========================//
@@ -17,7 +15,6 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(morgan());
 app.use(methodoverride());
 
 if (process.env.NODE_ENV === 'development') {
@@ -111,5 +108,6 @@ router.route('/nutrition/:nutrition_id')
 app.use('/data', router);
 
 // =============LISTEN FOR EVENTS ON 9001 IF RUNNING NODE==================== //
-app.listen(9001); // Not used if Gulp is activated - it is bypassed
+// Took the listener out because of conflicts with C9 on January 13 2015
+
 exports = module.exports = app; // This is needed otherwise Mongoose Code will not work

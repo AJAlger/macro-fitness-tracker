@@ -13,7 +13,7 @@ var myApp = require('./server.js');
 // Since Neat depends on Bourbon, loading Neat works just as well.
 
 // I chose to write all the paths as variables to use throughout.
-var express_port = 9000;
+
 
 var paths = {
     sass: 'app/stylesheets/scss/', // Stylesheets folder for SASS
@@ -26,7 +26,7 @@ gulp.task('default', ['express', 'styles', 'scripts', 'watch'], function() {});
 
 // Gulp Task to Run Express Server
 gulp.task('express', function() {
-    myApp.listen(express_port);
+        myApp.listen(process.env.PORT, process.env.IP);
 });
 
 // Gulp Task to SASS - Bourbon and Neat are Working
