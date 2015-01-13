@@ -7,11 +7,11 @@
     angular.module('NutritionTracker')
         .factory('NutritionData', ['$resource', function($resource) {
 
-            return $resource('data/nutrition/:nutrition_id', {}, {
-                query: {method: 'GET', isArray: true},
-                save: {method: 'POST'}
+            return $resource('data/nutrition/:nutrition_id', {
+                nutrition_id: '@_id'
             });
-
+                
+      
 
         }]);
 

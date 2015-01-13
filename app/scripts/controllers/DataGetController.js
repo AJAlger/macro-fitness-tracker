@@ -9,7 +9,7 @@
         .controller('dataShow', ['$scope', 'NutritionData', function($scope, NutritionData) {
 
         $scope.results = NutritionData.query();
-
+      
 
         }]);
 })();

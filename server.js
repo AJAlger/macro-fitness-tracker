@@ -38,12 +38,6 @@ var router = express.Router();
 
 // NEED A LOGIN PAGE ROUTE HERE
 
-router.route('/login')
-
-.post(function(request, response) {
-
-    });
-
 
 // ================================= //
 
@@ -53,13 +47,13 @@ router.route('/nutrition')
 // ===========POST INFORMATION====================== //
 .post(function(request, response) {
 
-        var base = new Nutrition;
-        base.date = request.body.date;
-        base.protein = request.body.protein;
-        base.carbohydrate = request.body.carbohydrate;
-        base.fat = request.body.fat;
+        var macro = new Nutrition;
+        macro.date = request.body.date;
+        macro.protein = request.body.protein;
+        macro.carbohydrate = request.body.carbohydrate;
+        macro.fat = request.body.fat;
 
-        base.save(function(err) {
+        macro.save(function(err) {
             if (err)
             response.send(err);
 
@@ -85,18 +79,18 @@ router.route('/nutrition/:nutrition_id')
 
 // ===========ACCESS INFORMATION====================== //
 .get(function(request, response) {
-        Nutrition.findById(request.params.nutrition_id, function(err, base) {
+        Nutrition.findById(request.params.nutrition_id, function(err, macro) {
           if(err)
           response.send(err);
 
-            response.json(base);
+            response.json(macro);
         });
     })
 
 // ==============DELETE INFORMATION=================== //
 .delete(function(request, response) {
         Nutrition.remove({_id: request.params.nutrition_id},
-            function(err, base) {
+            function(err, macro) {
             if(err)
             response.send(err);
 
