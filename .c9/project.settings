@@ -21,6 +21,7 @@
     },
     "run": {
         "@path": "/.c9/runners",
+        "@runner": "Node 0.10.x",
         "configs": {
             "@inited": "true",
             "json()": {}
