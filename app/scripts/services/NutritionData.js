@@ -7,8 +7,8 @@
     angular.module('NutritionTracker')
         .factory('NutritionData', ['$resource', function($resource) {
 
-            return $resource('data/nutrition/:nutrition_id', {
-                nutrition_id: '@_id'
+            return $resource('data/nutrition/:id', {
+                id: '@_id'
             });
                 
       

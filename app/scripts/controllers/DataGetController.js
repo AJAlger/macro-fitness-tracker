@@ -8,8 +8,14 @@
 
         .controller('dataShow', ['$scope', 'NutritionData', function($scope, NutritionData) {
 
+        console.log(NutritionData, new NutritionData());
+    
         $scope.results = NutritionData.query();
-      
-
+        
+        console.log($scope.results.length);
+        
+        
+        
+     
         }]);
 })();

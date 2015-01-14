@@ -8,21 +8,18 @@
 
         .controller('dataAdd', ['$scope', 'MacroCalculation', 'NutritionData', function($scope, MacroCalculation, NutritionData) {
             
-            $scope.save = function() {
-                var newMacro = new NutritionData({
-                     total: $scope.macro.amount
-            
-                });
-                
-                newMacro.$save(function(){
-                   $scope.results.push(newMacro); 
-                   $scope.macro.amount = '';
-                });
-            };
-            
             $scope.macros = MacroCalculation.macros();
             $scope.totals = MacroCalculation.totals();
-            $scope.sendMacros = NutritionData.save();
             
+            console.log($scope.macros);
+            
+            $scope.addMacro = function() {
+              
+              
+                
+            };
+           
+            
+            console.log($scope.macros.total);
         }]);
 })();
