@@ -8,10 +8,11 @@
         .factory('NutritionData', ['$resource', function($resource) {
 
             return $resource('data/nutrition/:id', {
-                id: '@_id'
-            }, {
-                
-            });
+                id: '@_id'}, {
+                    get: {method: 'GET', isArray: true},
+                    add: {methos: 'ADD'},
+                    delete: {method: 'DELETE'}
+                });
                 
       
 

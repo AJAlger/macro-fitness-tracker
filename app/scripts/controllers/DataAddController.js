@@ -13,8 +13,11 @@
             
             console.log($scope.macros);
             
+            // Add new macro information 
             $scope.addMacro = function() {
-              
+                var macro = new NutritionData({
+                   
+              });
               
                 
             };
