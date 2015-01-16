@@ -75,11 +75,11 @@ router.route('/nutrition')
 
 // =========NEW ROUTE TO ACCESS INDIVIDUAL ITEMS======================== //
 
-router.route('/nutrition/:id')
+router.route('/nutrition/:_id')
 
 // ===========ACCESS INFORMATION====================== //
 .get(function(request, response) {
-        Nutrition.findById(request.params.id, function(err, macro) {
+        Nutrition.findById(request.params._id, function(err, macro) {
           if(err)
           response.send(err);
 
@@ -89,7 +89,7 @@ router.route('/nutrition/:id')
 
 // ==============DELETE INFORMATION=================== //
 .delete(function(request, response) {
-        Nutrition.remove({_id: request.params.id},
+        Nutrition.remove({_id: request.params._id},
             function(err, macro) {
             if(err)
             response.send(err);
