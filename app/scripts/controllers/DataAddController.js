@@ -11,18 +11,33 @@
             $scope.macros = MacroCalculation.macros();
             $scope.totals = MacroCalculation.totals();
             
-            console.log($scope.macros);
-            
             // Add new macro information 
             $scope.addMacro = function() {
-                var macro = new NutritionData({
-                   
-              });
-              
+                var returnObject = {};
                 
+                for (macro in $scope.macros) {
+                    var thisMacro = {
+                        "field1": macro.field1,
+                        "etc": macro.etc
+                   }
+                    returnObject[macro.type] = thisMacro;
+                }
+                
+                returnObject.totals = macro.totals();
+                NutritionData.save(returnObject)
+             
+            //  {
+            //      "fat": {
+            //          "field1": "xxx",
+            //          "field2": "xxx"
+            //      },
+            //      "carb": {
+                     
+            //      },
+            //      "totals": 34
+            //  }
             };
            
             
-            console.log($scope.macros.total);
         }]);
 })();
