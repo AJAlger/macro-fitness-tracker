@@ -13,30 +13,37 @@
             
             // Add new macro information 
             $scope.addMacro = function() {
-                var returnObject = {};
+                var newMacro = {};
+                for(var macro in $scope.macros) {
+                    var macroObj = {
+                        "protein":  macro.amount,
+                        "carbohydrate": macro.amount,
+                        "fat": macro.amount
+                    }
+                    macroObj[$scope.macros.type] = macroObj;
+                    console.log('macroobj: ',  macroObj);
+                    console.log('macro type: ',  $scope.macros.type);
+                };
                 
-                for (macro in $scope.macros) {
-                    var thisMacro = {
-                        "field1": macro.field1,
-                        "etc": macro.etc
-                   }
-                    returnObject[macro.type] = thisMacro;
-                }
-                
-                returnObject.totals = macro.totals();
-                NutritionData.save(returnObject)
-             
-            //  {
-            //      "fat": {
-            //          "field1": "xxx",
-            //          "field2": "xxx"
-            //      },
-            //      "carb": {
-                     
-            //      },
-            //      "totals": 34
-            //  }
+                NutritionData.save(newMacro);
+                console.log('new macro: ',  newMacro);
             };
+                // var macroObj = {};
+                
+                // for(var amount in $scope.macros) {
+                //     var thisMacro = {
+                //         "protein": $scope.macros.amount,
+                //         "carbohydrate": $scope.macros.amount,
+                //         "fat": $scope.macros.amount
+                //   }
+                //     macroObj[$scope.macros.type] = thisMacro;
+                //     console.log(thisMacro);
+                // }
+                
+                // macroObj.totals = $scope.totals();
+                // NutritionData.save(macroObj)
+                // console.log(macroObj);
+             
            
             
         }]);
