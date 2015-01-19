@@ -13,15 +13,20 @@
             
             // Add new macro information 
             $scope.addMacro = function() {
+                
                 var newMacro = {};
-                for(var i = 0, len = $scope.macros; i < len; i += 1) {
-                    newMacro.push($scope.macros[i].total);
-                }
+                
+                for(var key in $scope.macros) {
+                   var thisMacro = {};
+                    thisMacro = $scope.macros[key].total();
+                    newMacro[$scope.macros[key].type] = thisMacro;
+                    
+                };
                 NutritionData.save(newMacro);
                 console.log(newMacro);
             };
         
-            
+        
                 // var macroObj = {};
                 
                 // for(var amount in $scope.macros) {
