@@ -11,7 +11,7 @@
          $scope.results = NutritionData.query();
         
              // Make a delete button here.
-        $scope.deleteRecord = function(macro){
+        $scope.deleteRecord =  function(macro){
             NutritionData.delete(macro);
             _.remove($scope.results, macro);
         };

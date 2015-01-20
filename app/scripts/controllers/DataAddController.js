@@ -10,40 +10,30 @@
             
             $scope.macros = MacroCalculation.macros();
             $scope.totals = MacroCalculation.totals();
+        
+            
             
             // Add new macro information 
             $scope.addMacro = function() {
-                
-                var newMacro = {};
-                
+               var newMacro = new NutritionData();
+               
+                //var newMacro = {};
+                //var date = $scope.date;
                 for(var key in $scope.macros) {
-                   var thisMacro = {};
+                  var thisMacro = {};
                     thisMacro = $scope.macros[key].total();
                     newMacro[$scope.macros[key].type] = thisMacro;
                     
+          
                 };
-                NutritionData.save(newMacro);
+                
+               // newMacro.$save();
+                
+                newMacro.$save();
+               
                 console.log(newMacro);
+                
             };
-        
-        
-                // var macroObj = {};
-                
-                // for(var amount in $scope.macros) {
-                //     var thisMacro = {
-                //         "protein": $scope.macros.amount,
-                //         "carbohydrate": $scope.macros.amount,
-                //         "fat": $scope.macros.amount
-                //   }
-                //     macroObj[$scope.macros.type] = thisMacro;
-                //     console.log(thisMacro);
-                // }
-                
-                // macroObj.totals = $scope.totals();
-                // NutritionData.save(macroObj)
-                // console.log(macroObj);
-             
            
-            
         }]);
 })();
