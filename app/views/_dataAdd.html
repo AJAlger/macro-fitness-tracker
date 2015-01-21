@@ -7,7 +7,7 @@
                 </div>
             </md-toolbar>
             <md-content md-theme="deep-orange" class="md-padding">
-                <form>
+                <form ng-submit="addMacro()">
                     <h3 class="subtitles">Date</h3>
                     <div class="row" layout="row">
                         <md-text-float
@@ -24,7 +24,7 @@
                                       ng-model="macro.amount">
                        </md-text-float>
                     </div>
-                    <md-button ng-click="addMacro(newMacro)" 
+                    <md-button  
                                class="md-primary submitMacros md-raised"
                                md-theme="deep-orange">Submit</md-button>
                 </form>

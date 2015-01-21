@@ -9,8 +9,7 @@
 
             return $resource('data/nutrition/:_id', {_id: '@_id'}, {
                 
-               
-                
+             
             });
 
         }]);

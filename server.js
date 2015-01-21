@@ -6,12 +6,14 @@ var express = require('express'),
     cookieParser = require('cookie-parser'),
     methodoverride = require('method-override'),
     errorHandler = require('errorhandler'),
+    morgan = require('morgan'),
     Nutrition = require('./app/routes/mongo.js');
 
 // =========================CONFIGURATION===========================//
 // =================================================================//
 app.use(express.static(__dirname + '/app'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
+app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cookieParser());

@@ -11,21 +11,21 @@
 
             var macros = [
                 {
-                    'type': 'Protein',
+                    'type': 'protein',
                     'amount': null,
                     'multiplier': 4,
                     'tip': 'Calories per gram of protein',
                     'total': function() {return this.amount * this.multiplier;}
                 },
                 {
-                    'type': 'Carbohydrate',
+                    'type': 'carbohydrate',
                     'amount': null,
                     'multiplier': 4,
                     'tip': 'Calories per gram of carbohydrate',
                     'total': function() {return this.amount * this.multiplier;}
                 },
                 {
-                    'type': 'Fat',
+                    'type': 'fat',
                     'amount': null,
                     'multiplier': 9,
                     'tip': 'Calories per gram of fat',

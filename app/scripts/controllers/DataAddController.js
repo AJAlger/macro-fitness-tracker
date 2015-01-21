@@ -15,7 +15,7 @@
             
             // Add new macro information 
             $scope.addMacro = function() {
-               var newMacro = new NutritionData();
+                var newMacro = new NutritionData();
                
                 //var newMacro = {};
                 //var date = $scope.date;
