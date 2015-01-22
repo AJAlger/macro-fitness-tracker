@@ -10,24 +10,18 @@
             
             $scope.macros = MacroCalculation.macros();
             $scope.totals = MacroCalculation.totals();
-        
-            
-            
+
             // Add new macro information 
             $scope.addMacro = function() {
                 var newMacro = new NutritionData();
-               
-                //var newMacro = {};
+              
                 //var date = $scope.date;
                 for(var key in $scope.macros) {
                   var thisMacro = {};
                     thisMacro = $scope.macros[key].total();
                     newMacro[$scope.macros[key].type] = thisMacro;
-                    
-          
+
                 };
-                
-               // newMacro.$save();
                 
                 newMacro.$save();
                
