@@ -15,7 +15,7 @@
             $scope.addMacro = function() {
                 var newMacro = new NutritionData();
               
-                //var date = $scope.date;
+                newMacro.date = $scope.date;
                 for(var key in $scope.macros) {
                   var thisMacro = {};
                     thisMacro = $scope.macros[key].total();
