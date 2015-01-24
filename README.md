@@ -1,6 +1,6 @@
 #Macro Fitness Tracker
 
-This projects uses my [*angular-shooters*](https://github.com/AbdullahAlger/angular-shooters) skeleton which uses HTML 5, AngularJS, ExpressJS, Neat, Bourbon, and Gulp. I will incorporate Mongoose, MongoDB and D3.js for data storage and visualizations, respectively.
+This projects uses my [*angular-shooters*](https://github.com/AbdullahAlger/angular-shooters) skeleton which uses HTML 5, AngularJS, ExpressJS, Angular Material Design, Bourbon, and Gulp. I will incorporate Mongoose, MongoDB and D3.js for data storage and visualizations, respectively.
 
 ## Application Purpose
 
