@@ -1,99 +1,62 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/home/ubuntu/.nvm/v0.10.35/bin/node',
 1 verbose cli   '/home/ubuntu/.nvm/v0.10.35/bin/npm',
-1 verbose cli   'install' ]
+1 verbose cli   'owner',
+1 verbose cli   'ls',
+1 verbose cli   'macro-fitness-tracker' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.35
-4 verbose readDependencies using package.json deps
-5 verbose install where, deps [ '/home/ubuntu/workspace',
-5 verbose install   [ 'body-parser',
-5 verbose install     'cookie-parser',
-5 verbose install     'errorhandler',
-5 verbose install     'express',
-5 verbose install     'express-session',
-5 verbose install     'gulp',
-5 verbose install     'gulp-livereload',
-5 verbose install     'gulp-plumber',
-5 verbose install     'gulp-rename',
-5 verbose install     'gulp-ruby-sass',
-5 verbose install     'gulp-sourcemaps',
-5 verbose install     'gulp-uglify',
-5 verbose install     'method-override',
-5 verbose install     'moment',
-5 verbose install     'mongoose',
-5 verbose install     'morgan',
-5 verbose install     'node-bourbon',
-5 verbose install     'node-neat',
-5 verbose install     'nodemon',
-5 verbose install     'serve-static' ] ]
-6 info preinstall macro-fitness-tracker@0.1.0
-7 verbose readDependencies using package.json deps
-8 verbose already installed skipping body-parser@^1.10.0 /home/ubuntu/workspace
-9 verbose already installed skipping cookie-parser@^1.3.3 /home/ubuntu/workspace
-10 verbose already installed skipping errorhandler@^1.3.0 /home/ubuntu/workspace
-11 verbose already installed skipping express@^4.10.6 /home/ubuntu/workspace
-12 verbose already installed skipping express-session@^1.9.3 /home/ubuntu/workspace
-13 verbose already installed skipping gulp@^3.8.10 /home/ubuntu/workspace
-14 verbose already installed skipping gulp-livereload@^3.0.2 /home/ubuntu/workspace
-15 verbose already installed skipping gulp-plumber@^0.6.6 /home/ubuntu/workspace
-16 verbose already installed skipping gulp-rename@^1.2.0 /home/ubuntu/workspace
-17 verbose already installed skipping gulp-ruby-sass@^0.7.1 /home/ubuntu/workspace
-18 verbose already installed skipping gulp-sourcemaps@^1.3.0 /home/ubuntu/workspace
-19 verbose already installed skipping gulp-uglify@^1.0.2 /home/ubuntu/workspace
-20 verbose already installed skipping method-override@^2.3.0 /home/ubuntu/workspace
-21 verbose already installed skipping moment@^2.8.4 /home/ubuntu/workspace
-22 verbose already installed skipping mongoose@^3.8.21 /home/ubuntu/workspace
-23 verbose already installed skipping morgan@^1.5.1 /home/ubuntu/workspace
-24 verbose already installed skipping node-bourbon@^1.2.3 /home/ubuntu/workspace
-25 verbose already installed skipping node-neat@^1.4.2 /home/ubuntu/workspace
-26 verbose already installed skipping nodemon@^1.2.1 /home/ubuntu/workspace
-27 verbose already installed skipping serve-static@^1.7.1 /home/ubuntu/workspace
-28 silly resolved []
-29 info build /home/ubuntu/workspace
-30 verbose linkStuff [ false, false, false, '/home/ubuntu' ]
-31 info linkStuff macro-fitness-tracker@0.1.0
-32 verbose linkBins macro-fitness-tracker@0.1.0
-33 verbose linkMans macro-fitness-tracker@0.1.0
-34 verbose rebuildBundles macro-fitness-tracker@0.1.0
-35 verbose rebuildBundles [ '.bin',
-35 verbose rebuildBundles   'body-parser',
-35 verbose rebuildBundles   'cookie-parser',
-35 verbose rebuildBundles   'errorhandler',
-35 verbose rebuildBundles   'express',
-35 verbose rebuildBundles   'express-session',
-35 verbose rebuildBundles   'gulp',
-35 verbose rebuildBundles   'gulp-livereload',
-35 verbose rebuildBundles   'gulp-plumber',
-35 verbose rebuildBundles   'gulp-rename',
-35 verbose rebuildBundles   'gulp-ruby-sass',
-35 verbose rebuildBundles   'gulp-sourcemaps',
-35 verbose rebuildBundles   'gulp-uglify',
-35 verbose rebuildBundles   'method-override',
-35 verbose rebuildBundles   'moment',
-35 verbose rebuildBundles   'mongoose',
-35 verbose rebuildBundles   'morgan',
-35 verbose rebuildBundles   'node-bourbon',
-35 verbose rebuildBundles   'node-neat',
-35 verbose rebuildBundles   'nodemon',
-35 verbose rebuildBundles   'serve-static' ]
-36 info install macro-fitness-tracker@0.1.0
-37 info postinstall macro-fitness-tracker@0.1.0
-38 verbose unsafe-perm in lifecycle true
-39 info macro-fitness-tracker@0.1.0 Failed to exec postinstall script
-40 error macro-fitness-tracker@0.1.0 postinstall: `./node_modules/bower/bin/bower install`
-40 error Exit status 127
-41 error Failed at the macro-fitness-tracker@0.1.0 postinstall script.
-41 error This is most likely a problem with the macro-fitness-tracker package,
-41 error not with npm itself.
-41 error Tell the author that this fails on your system:
-41 error     ./node_modules/bower/bin/bower install
-41 error You can get their info via:
-41 error     npm owner ls macro-fitness-tracker
-41 error There is likely additional logging output above.
-42 error System Linux 3.14.13-c9
-43 error command "/home/ubuntu/.nvm/v0.10.35/bin/node" "/home/ubuntu/.nvm/v0.10.35/bin/npm" "install"
-44 error cwd /home/ubuntu/workspace
-45 error node -v v0.10.35
-46 error npm -v 1.4.28
-47 error code ELIFECYCLE
-48 verbose exit [ 1, true ]
+4 verbose request where is /macro-fitness-tracker
+5 verbose request registry https://registry.npmjs.org/
+6 verbose request id 3c30cfc638b85d7e
+7 verbose url raw /macro-fitness-tracker
+8 verbose url resolving [ 'https://registry.npmjs.org/', './macro-fitness-tracker' ]
+9 verbose url resolved https://registry.npmjs.org/macro-fitness-tracker
+10 verbose request where is https://registry.npmjs.org/macro-fitness-tracker
+11 info trying registry request attempt 1 at 11:49:45
+12 http GET https://registry.npmjs.org/macro-fitness-tracker
+13 http 404 https://registry.npmjs.org/macro-fitness-tracker
+14 verbose headers { date: 'Sat, 24 Jan 2015 11:49:45 GMT',
+14 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+14 verbose headers   'content-type': 'application/json',
+14 verbose headers   'cache-control': 'max-age=0',
+14 verbose headers   'content-length': '52',
+14 verbose headers   'accept-ranges': 'bytes',
+14 verbose headers   via: '1.1 varnish',
+14 verbose headers   age: '0',
+14 verbose headers   'x-served-by': 'cache-lhr6332-LHR',
+14 verbose headers   'x-cache': 'MISS',
+14 verbose headers   'x-cache-hits': '0',
+14 verbose headers   'x-timer': 'S1422100185.627043,VS0,VE154',
+14 verbose headers   'keep-alive': 'timeout=10, max=50',
+14 verbose headers   connection: 'Keep-Alive' }
+15 silly registry.get cb [ 404,
+15 silly registry.get   { date: 'Sat, 24 Jan 2015 11:49:45 GMT',
+15 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+15 silly registry.get     'content-type': 'application/json',
+15 silly registry.get     'cache-control': 'max-age=0',
+15 silly registry.get     'content-length': '52',
+15 silly registry.get     'accept-ranges': 'bytes',
+15 silly registry.get     via: '1.1 varnish',
+15 silly registry.get     age: '0',
+15 silly registry.get     'x-served-by': 'cache-lhr6332-LHR',
+15 silly registry.get     'x-cache': 'MISS',
+15 silly registry.get     'x-cache-hits': '0',
+15 silly registry.get     'x-timer': 'S1422100185.627043,VS0,VE154',
+15 silly registry.get     'keep-alive': 'timeout=10, max=50',
+15 silly registry.get     connection: 'Keep-Alive' } ]
+16 error owner ls Couldn't get owner data macro-fitness-tracker
+17 error 404 404 Not Found: macro-fitness-tracker
+17 error 404
+17 error 404 'macro-fitness-tracker' is not in the npm registry.
+17 error 404 You should bug the author to publish it
+17 error 404
+17 error 404 Note that you can also install from a
+17 error 404 tarball, folder, or http url, or git url.
+18 error System Linux 3.14.13-c9
+19 error command "/home/ubuntu/.nvm/v0.10.35/bin/node" "/home/ubuntu/.nvm/v0.10.35/bin/npm" "owner" "ls" "macro-fitness-tracker"
+20 error cwd /home/ubuntu/workspace
+21 error node -v v0.10.35
+22 error npm -v 1.4.28
+23 error code E404
+24 verbose exit [ 1, true ]

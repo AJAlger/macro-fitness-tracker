@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "description": "angularjs, expressjs, gulp, and bourbon and neat skeleton",
   "main": "index.js",
-  "engines": {"node": "0.10.x"},
+  "engine": {"node": "0.10.x"},
   "scripts": {
     "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "bower cache clean && ./node_modules/bower/bin/bower install"
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "repository": {
     "type": "git",
@@ -15,9 +15,6 @@
   },
   "author": "Abdullah Alger",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/AbdullahAlger/macro-fitness-tracker/issues"
-  },
   "homepage": "https://github.com/AbdullahAlger/macro-fitness-tracker",
   "dependencies": {
     "body-parser": "^1.10.0",
