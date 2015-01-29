@@ -1,5 +1,5 @@
-
-
+bower_components
+node_modules
 .c9
 .DS_Store
 app/stylesheets/scss/base

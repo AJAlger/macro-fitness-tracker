@@ -31,6 +31,11 @@ i {
 
 }
 
+[ui-view].ng-enter, [ui-view].ng-leave {
+  -webkit-transition: 1s linear all;
+  transition: 1s linear all;
+}
+
 
 
 
