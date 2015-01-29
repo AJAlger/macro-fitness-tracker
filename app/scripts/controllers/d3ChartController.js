@@ -2,7 +2,7 @@
 
 'use strict';
 
-    angular.module('NutritionTracker', []) 
+    angular.module('NutritionTracker') 
       
       .controller('d3Controller', ['$scope', 'macroGraph', function($scope, macroGraph) {
           

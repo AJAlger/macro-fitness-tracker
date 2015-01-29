@@ -23,6 +23,10 @@ i {
   position: relative;
   margin-right: 10px; }
 
+[ui-view].ng-enter, [ui-view].ng-leave {
+  -webkit-transition: 1s linear all;
+  transition: 1s linear all; }
+
 .outer-container {
   margin: auto;
   max-width: 950px; }
@@ -32,6 +36,14 @@ i {
     font-weight: 300;
     line-height: 30px;
     margin-bottom: 40px; }
+
+.ani-page-enter {
+  -webkit-transition: 1s linear all;
+  transition: 1s linear all;
+  opacity: 0; }
+
+.ani-page-enter, .ani-page-enter-active {
+  opacity: 1; }
 
 .add-page {
   z-index: 1; }
