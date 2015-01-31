@@ -25,7 +25,7 @@ gulp.task('default', ['express', 'styles', 'scripts', 'watch'], function() {});
 
 // Gulp Task to Run Express Server
 gulp.task('express', function() {
-        myApp.listen(process.env.PORT);
+        myApp.listen(process.env.PORT || 8080);
 });
 
 // Gulp Task to SASS - Bourbon and Neat are Working

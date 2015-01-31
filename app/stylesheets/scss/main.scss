@@ -35,26 +35,28 @@ i {
 
 }
 
-.main {
-  @include transition(all 2.0s ease);
-  
-  &.ng-enter {
-    .add-page{
-      @include effect(fadeInUp);
-    }
-    .landing {
-      @include effect(fadeInUp);
-    }
-  }
-  &.ng-leave {
-    .add-page {
-    @include effect(fadeOutDown);
-    }
-    .landing {
-      @include effect(fadeOutDown);
-    }
-  }
-  
+.top-bar {
+  z-index: 4;
 }
+
+.main.ng-enter, .main.ng-leave {
+  @include animation-duration(2s);
+
+}
+
+.main.ng-enter {
+  @include animation-name(fadeInDown);
+  @include transition(all ease);
+  z-index: 3;
+
+}
+
+.main.ng-leave {
+  @include animation-name(fadeOutDown);
+  @include transition(all ease);
+  z-index: 2;
+
+}
+
 
 

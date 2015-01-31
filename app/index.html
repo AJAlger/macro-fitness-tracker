@@ -27,8 +27,8 @@
     </md-content>
 </md-sidenav>
 
-<div class="container" layout="column" role="main" layout-fill>
-    <md-toolbar class="md-header md-deep-orange-theme">
+<div class="container" layout="column" role="main" layout-fill md-theme="deep-orange">
+    <md-toolbar class="md-header top-bar">
         <div class="md-toolbar-tools">
             <div layout="row" flex aria-label="Toggle Menu" ng-controller="MenuBar">
                 <i class="fa fa-bars fa-lg" hide-gt-md ng-click="openMenu()"></i>
@@ -36,7 +36,7 @@
             </div>
         </div>
     </md-toolbar>
-    <md-content ui-view class="main"></md-content>
+    <div ui-view class="main"></div>
 </div>
 
 
