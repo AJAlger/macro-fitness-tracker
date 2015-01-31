@@ -1,4 +1,8 @@
 @import "bourbon";
+@import "mixins";
+@import "intro";
+@import "add";
+@import "graphs";
 
 html p, body p {
   line-height: 1.6;
@@ -31,15 +35,26 @@ i {
 
 }
 
-[ui-view].ng-enter, [ui-view].ng-leave {
-  -webkit-transition: 1s linear all;
-  transition: 1s linear all;
+.main {
+  @include transition(all 2.0s ease);
+  
+  &.ng-enter {
+    .add-page{
+      @include effect(fadeInUp);
+    }
+    .landing {
+      @include effect(fadeInUp);
+    }
+  }
+  &.ng-leave {
+    .add-page {
+    @include effect(fadeOutDown);
+    }
+    .landing {
+      @include effect(fadeOutDown);
+    }
+  }
+  
 }
 
 
-
-
-
-@import "intro";
-@import "add";
-@import "graphs";

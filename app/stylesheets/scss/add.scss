@@ -1,14 +1,5 @@
 @import "bourbon";
 
-.ani-page-enter {
-  -webkit-transition: 1s linear all;
-  transition: 1s linear all;
-  opacity: 0;
-}
-
-.ani-page-enter, .ani-page-enter-active {
-  opacity: 1;
-}
 
 .add-page {
   z-index: 1;
