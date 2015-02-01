@@ -27,6 +27,7 @@
     </md-content>
 </md-sidenav>
 
+
 <div class="container" layout="column" role="main" layout-fill md-theme="deep-orange">
     <md-toolbar class="md-header top-bar">
         <div class="md-toolbar-tools">
@@ -36,7 +37,9 @@
             </div>
         </div>
     </md-toolbar>
-    <div ui-view class="main"></div>
+    <md-content ui-view></md-content>
+    <!-- If md-content is changed into a div, it will break the menu and the
+        content loaded in the ui-view will not scroll. -->
 </div>
 
 

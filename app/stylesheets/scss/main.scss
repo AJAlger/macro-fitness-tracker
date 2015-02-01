@@ -1,8 +1,8 @@
 @import "bourbon";
-@import "mixins";
 @import "intro";
 @import "add";
 @import "graphs";
+@import "media";
 
 html p, body p {
   line-height: 1.6;
@@ -18,7 +18,7 @@ html p, body p {
   opacity: 1;
   padding: 0 28px;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   text-transform: capitalize;
   text-align: left;
 
@@ -35,9 +35,7 @@ i {
 
 }
 
-.top-bar {
-  z-index: 4;
-}
+
 
 .main.ng-enter, .main.ng-leave {
   @include animation-duration(2s);
@@ -47,14 +45,12 @@ i {
 .main.ng-enter {
   @include animation-name(fadeInDown);
   @include transition(all ease);
-  z-index: 3;
 
 }
 
 .main.ng-leave {
   @include animation-name(fadeOutDown);
   @include transition(all ease);
-  z-index: 2;
 
 }
 

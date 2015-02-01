@@ -11,14 +11,15 @@
             <md-content md-theme="deep-orange" class="md-padding">
                 <form ng-submit="addMacro()">
                     <h3 class="subtitles">Date</h3>
-                    <div class="row" layout="row">
+                    <div class="row" layout="column">
                         <md-text-float
                                 md-theme="deep-orange"
                                 type="date"
                                 ng-model="date">date = {{date | date: "MM-dd-YYYY"}}</md-text-float>
-                    </div>s
+                    </div>
                     <h3 class="subtitles">Enter Daily Macros in Grams</h3>
-                    <div class="row" layout="row">
+
+                        <div class="row" layout="row">
                        <md-text-float ng-repeat="macro in macros"
                                       md-theme="deep-orange"
                                       label="{{macro.type}}"
@@ -26,6 +27,7 @@
                                       ng-model="macro.amount">
                        </md-text-float>
                     </div>
+
                     <md-button  
                                class="md-primary submitMacros md-raised"
                                md-theme="deep-orange">Submit</md-button>

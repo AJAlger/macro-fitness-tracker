@@ -118,7 +118,7 @@ picture {
 .graph-page {
   z-index: 1; }
   .graph-page .graph-pad {
-    max-width: 900px;
+    max-width: 700px;
     margin: auto;
     /* This is where the Graph CSS will be inserted */ }
     .graph-page .graph-pad section {
@@ -126,18 +126,19 @@ picture {
       .graph-page .graph-pad section .graph-header {
         background-color: #8D6E63; }
     .graph-page .graph-pad .table-border th {
-      padding: 0 0.7em;
-      font-weight: 400; }
+      padding: 0em 0.7em;
+      font-weight: 400;
+      font-size: 12px; }
     .graph-page .graph-pad .table-border tbody {
-      font-size: 14px;
+      font-size: 12px;
       background-color: #fff; }
       .graph-page .graph-pad .table-border tbody tr:nth-child(even) {
         background-color: #f2f2f2; }
       .graph-page .graph-pad .table-border tbody td {
-        padding: 0 0.7em; }
+        padding: 0em 0.7em; }
       .graph-page .graph-pad .table-border tbody .remove-button {
         margin: 1em;
-        min-width: 8em;
+        min-width: 6em;
         text-transform: capitalize; }
 
 /*# sourceMappingURL=graphs.css.map */
