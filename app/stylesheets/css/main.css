@@ -263,25 +263,11 @@ i {
   position: relative;
   margin-right: 10px; }
 
-.main.ng-enter, .main.ng-leave {
-  -webkit-animation-duration: 2s;
-  -moz-animation-duration: 2s;
-  animation-duration: 2s; }
-
-.main.ng-enter {
-  -webkit-animation-name: fadeInDown;
-  -moz-animation-name: fadeInDown;
-  animation-name: fadeInDown;
-  -webkit-transition: all ease;
-  -moz-transition: all ease;
-  transition: all ease; }
-
-.main.ng-leave {
-  -webkit-animation-name: fadeOutDown;
-  -moz-animation-name: fadeOutDown;
-  animation-name: fadeOutDown;
-  -webkit-transition: all ease;
-  -moz-transition: all ease;
-  transition: all ease; }
+.reveal-animation.ng-enter {
+  /* standard transition code */
+  -webkit-animation: fadeInDown 1s;
+  -moz-animation: fadeInDown 1s;
+  -ms-animation: fadeInDown 1s;
+  animation: fadeInDown 1s; }
 
 /*# sourceMappingURL=main.css.map */

@@ -35,24 +35,15 @@ i {
 
 }
 
-
-
-.main.ng-enter, .main.ng-leave {
-  @include animation-duration(2s);
-
+.reveal-animation.ng-enter {
+  /* standard transition code */
+  -webkit-animation: fadeInDown 1s;
+  -moz-animation: fadeInDown 1s;
+  -ms-animation: fadeInDown 1s;
+  animation: fadeInDown 1s;
 }
 
-.main.ng-enter {
-  @include animation-name(fadeInDown);
-  @include transition(all ease);
 
-}
-
-.main.ng-leave {
-  @include animation-name(fadeOutDown);
-  @include transition(all ease);
-
-}
 
 
 

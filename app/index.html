@@ -15,7 +15,7 @@
 </head>
 <body layout="row">
 
-<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
+<md-sidenav class="md-sidenav-left md-whiteframe-z2 " md-component-id="left" md-is-locked-open="$media('gt-md')">
     <md-toolbar md-theme="deep-orange">
         <h2 class="md-toolbar-tools">Menu</h2>
     </md-toolbar>
@@ -37,7 +37,7 @@
             </div>
         </div>
     </md-toolbar>
-    <md-content ui-view></md-content>
+    <md-content ui-view class="reveal-animation"></md-content>
     <!-- If md-content is changed into a div, it will break the menu and the
         content loaded in the ui-view will not scroll. -->
 </div>
