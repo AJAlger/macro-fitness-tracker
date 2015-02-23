@@ -3,7 +3,6 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     livereload = require('gulp-livereload'),
     plumber = require('gulp-plumber'),
-    rename = require('gulp-rename'),
     neat = require('node-neat').includePaths,
     sourcemaps = require('gulp-sourcemaps');
 
