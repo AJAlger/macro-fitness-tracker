@@ -7,7 +7,7 @@
     <!------ STYLESHEETS ------>
 
     <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
-    <link rel="stylesheet" href="../bower_components/angular-material/themes/deep-orange-theme.css" />
+    <link rel="stylesheet" href="../bower_components/angular-material/themes/indigo-theme.css" />
     <link rel="stylesheet" href="../bower_components/fontawesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../bower_components/animate.css/animate.css" />
     <link rel="stylesheet" href="stylesheets/css/main.css" />
@@ -16,10 +16,10 @@
 <body layout="row">
 
 <md-sidenav class="md-sidenav-left md-whiteframe-z2 " md-component-id="left" md-is-locked-open="$media('gt-md')">
-    <md-toolbar md-theme="deep-orange">
+    <md-toolbar md-theme="indigo">
         <h2 class="md-toolbar-tools">Menu</h2>
     </md-toolbar>
-    <md-content ng-controller="MenuBar" md-theme="deep-orange">
+    <md-content ng-controller="MenuBar" md-theme="indigo">
         <md-button layout-align="left" ng-repeat="item in items" ui-sref="{{item.location}}" class="menu-item"
            md-ink-ripple="#bbb" aria-hidden="false">
             <span>{{item.label}}</span>
@@ -28,7 +28,7 @@
 </md-sidenav>
 
 
-<div class="container" layout="column" role="main" layout-fill md-theme="deep-orange">
+<div class="container" layout="column" role="main" layout-fill md-theme="indigo">
     <md-toolbar class="md-header top-bar">
         <div class="md-toolbar-tools">
             <div layout="row" flex aria-label="Toggle Menu" ng-controller="MenuBar">

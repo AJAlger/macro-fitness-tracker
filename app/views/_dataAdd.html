@@ -8,12 +8,12 @@
                     <span>Enter Daily Macronutrients</span>
                 </div>
             </md-toolbar>
-            <md-content md-theme="deep-orange" class="md-padding">
+            <md-content md-theme="indigo" class="md-padding">
                 <form ng-submit="addMacro()">
                     <h3 class="subtitles">Date</h3>
                     <div class="row" layout="column">
                         <md-text-float
-                                md-theme="deep-orange"
+                                md-theme="indigo"
                                 type="date"
                                 ng-model="date">date = {{date | date: "MM-dd-YYYY"}}</md-text-float>
                     </div>
@@ -21,7 +21,7 @@
 
                         <div class="row" layout="row">
                        <md-text-float ng-repeat="macro in macros"
-                                      md-theme="deep-orange"
+                                      md-theme="indigo"
                                       label="{{macro.type}}"
                                       type="number"
                                       ng-model="macro.amount">
@@ -30,10 +30,10 @@
 
                     <md-button  
                                class="md-primary submitMacros md-raised"
-                               md-theme="deep-orange">Submit</md-button>
+                               md-theme="indigo">Submit</md-button>
                 </form>
             </md-content>
-            <md-content md-theme="deep-orange" class="md-padding total-macros">
+            <md-content md-theme="indigo" class="md-padding total-macros">
                 <md-divider></md-divider>
                 <h3 class="subtitles">Total Calories from Macronutrients</h3>
                 <div class="calorieContainer" layout="row" layout-align="center center">
