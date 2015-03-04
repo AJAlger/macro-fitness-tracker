@@ -1,0 +1,11 @@
+.average-page {
+  z-index: 1; }
+  .average-page .average-pad {
+    max-width: 700px;
+    margin: auto; }
+    .average-page .average-pad section {
+      margin-top: 50px; }
+      .average-page .average-pad section .average-header {
+        background-color: #3F51B5; }
+
+/*# sourceMappingURL=averages.css.map */

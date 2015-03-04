@@ -10,9 +10,9 @@
 
     section {
       margin-top: 50px;
-      
+
       .graph-header {
-        background-color: #FF5722;
+        background-color: #3F51B5;
       }
 
     }
@@ -40,13 +40,15 @@
           padding: $table-padding;
         }
 
-          .remove-button {
-            margin: 1em;
-            min-width: 6em;
-            text-transform: capitalize;
-          }
+        .remove-button {
+          margin: 1em;
+          min-width: 6em;
+          text-transform: capitalize;
+        }
       }
     }
+
+
 
     /* This is where the Graph CSS will be inserted */
 

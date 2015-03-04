@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,aAAc;EACZ,OAAO,EAAE,CAAC;EAEV,0BAAa;IACX,SAAS,EAAE,KAAK;IAChB,MAAM,EAAE,IAAI;IAEZ,kCAAQ;MACN,UAAU,EAAE,IAAI;MAEhB,kDAAgB;QACd,gBAAgB,EAAE,OAAO",
+"sources": ["../averages.scss"],
+"names": [],
+"file": "averages.css"
+}

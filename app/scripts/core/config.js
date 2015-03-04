@@ -23,6 +23,10 @@
                 url: '/macronutrients',
                 templateUrl: 'views/_dataAdd.html'
             })
+            .state('averages', {
+                url: '/averages',
+                templateUrl: 'views/_dataAverage.html'
+            })
             .state('summary', {
                 url: '/summary',
                 templateUrl: 'views/_dataGraphs.html'

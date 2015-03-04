@@ -1,0 +1,20 @@
+@import "bourbon";
+
+.average-page {
+  z-index: 1;
+
+  .average-pad {
+    max-width: 700px;
+    margin: auto;
+
+    section {
+      margin-top: 50px;
+
+      .average-header {
+        background-color: #3F51B5;
+      }
+
+    }
+
+  }
+}

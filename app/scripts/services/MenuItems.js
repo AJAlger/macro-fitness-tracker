@@ -12,7 +12,8 @@
             var menuItems = [
                 {'label': 'Introduction', 'location': 'index'},
                 {'label': 'Macronutrients', 'location': 'data'},
-                {'label': 'Summary', 'location': 'summary'}
+                {'label': 'Averages', location: 'averages'},
+                {'label': 'Graphs', 'location': 'summary'}
             ];
 
             var getMenuItems = function() {
