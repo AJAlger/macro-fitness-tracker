@@ -13,7 +13,7 @@
                 {'label': 'Introduction', 'location': 'index'},
                 {'label': 'Macronutrients', 'location': 'data'},
                 {'label': 'Averages', location: 'averages'},
-                {'label': 'Graphs', 'location': 'summary'}
+                {'label': 'Summary', 'location': 'summary'}
             ];
 
             var getMenuItems = function() {
