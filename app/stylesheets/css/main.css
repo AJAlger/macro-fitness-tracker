@@ -196,6 +196,18 @@ picture {
         min-width: 6em;
         text-transform: capitalize; }
 
+.average-page {
+  z-index: 1; }
+  .average-page .average-pad {
+    max-width: 700px;
+    margin: auto; }
+    .average-page .average-pad section {
+      margin-top: 50px; }
+      .average-page .average-pad section .average-header {
+        background-color: #3F51B5; }
+      .average-page .average-pad section .subtitles {
+        font-weight: 300; }
+
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
   table, thead, tbody, th, td, tr {
     display: block; }
@@ -256,7 +268,7 @@ html p, body p {
   text-transform: capitalize;
   text-align: left; }
   .menu-item:hover {
-    color: #FF9E80; }
+    color: #3F51B5; }
 
 i {
   line-height: inherit;

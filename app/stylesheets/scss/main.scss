@@ -2,6 +2,7 @@
 @import "intro";
 @import "add";
 @import "graphs";
+@import "averages";
 @import "media";
 
 html p, body p {
@@ -23,7 +24,7 @@ html p, body p {
   text-align: left;
 
     &:hover {
-      color: #FF9E80;
+      color: #3F51B5;
     }
 
   }

@@ -16,16 +16,15 @@
                 var newMacro = new NutritionData();
               
                 newMacro.date = $scope.date;
+
                 for(var key in $scope.macros) {
                   var thisMacro = {};
                     thisMacro = $scope.macros[key].total();
                     newMacro[$scope.macros[key].type] = thisMacro;
 
-                };
+                }
                 
                 newMacro.$save();
-               
-                console.log(newMacro);
                 
             };
            
