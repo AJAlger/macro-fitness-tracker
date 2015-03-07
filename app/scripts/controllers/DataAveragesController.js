@@ -7,12 +7,12 @@
 
     angular.module('NutritionTracker')
 
-        .controller('dataAverage', ['$scope', 'NutritionData', function($scope, NutritionData) {
+        .controller('dataAverage', ['$scope', 'NutritionData', 'MacroAverages', function($scope, NutritionData, MacroAverages) {
 
             $scope.dataAvg = function() {
-               var allData = NutritionData.query();
+                var allData = NutritionData.query();
 
-                console.log(allData);
+
 
 
             };
