@@ -1,12 +1,12 @@
 /**
  * Created by Abdullah-Mac on 1/10/15.
  */
-(function() {
+(function () {
     'use strict';
 
     angular.module('NutritionTracker')
 
-        .factory('d3Factory', [ function() {
+        .factory('d3Factory', [ function () {
 
             // D3 code
 
@@ -15,4 +15,4 @@
 
 
         }]);
-})();
+}());

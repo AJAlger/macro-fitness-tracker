@@ -1,13 +1,14 @@
-(function() { // Wrapped AngularJS App in an IIFE
-'use strict';
+(function () { // Wrapped AngularJS App in an IIFE
+    'use strict';
 
-        angular.module('NutritionTracker', [
-                'ngMaterial',
-                'ui.router',
-                'ngResource',
-                'ngAnimate'
-            ]);
+    angular.module('NutritionTracker', [
+        'ngMaterial',
+        'ui.router',
+        'ngResource',
+        'ngAnimate',
+        'angularMoment'
+    ]);
 
-})();
+}());
 
 

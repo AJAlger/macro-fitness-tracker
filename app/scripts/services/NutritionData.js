@@ -1,17 +1,17 @@
 /**
  * Created by Abdullah-Mac on 1/10/15.
  */
-(function() {
+(function () {
     'use strict';
 
     angular.module('NutritionTracker')
-        .factory('NutritionData', ['$resource', function($resource) {
+        .factory('NutritionData', ['$resource', function ($resource) {
 
-            return $resource('data/nutrition/:_id', {_id: '@_id'}, {
+            return $resource('data/nutrition/:_id', { _id: '@_id' }, {
                 
              
             });
 
         }]);
 
-})();
+}());

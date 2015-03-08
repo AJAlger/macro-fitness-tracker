@@ -1,15 +1,15 @@
 /**
  * Created by Abdullah-Mac on 3/4/15.
  */
-(function() {
+(function () {
 
     'use strict';
 
     angular.module('NutritionTracker')
 
-        .controller('dataAverage', ['$scope', 'NutritionData', 'MacroAverages', function($scope, NutritionData, MacroAverages) {
+        .controller('dataAverage', ['$scope', 'NutritionData', 'MacroAverages', function ($scope, NutritionData, MacroAverages) {
 
-            $scope.dataAvg = function() {
+            $scope.dataAvg = function () {
                 var allData = NutritionData.query();
 
 
@@ -20,4 +20,4 @@
 
         }]);
 
-})();
+}());

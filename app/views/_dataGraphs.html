@@ -13,15 +13,15 @@
                             <tr>
                                 <th>#</th>
                                 <th>Date</th>
-                                <th>Protein(g)</th>
-                                <th>Carbohydrate(g)</th>
-                                <th>Fat(g)</th>
+                                <th>Protein(cal)</th>
+                                <th>Carbohydrate(cal)</th>
+                                <th>Fat(cal)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="records" ng-repeat="result in results | orderBy: '-date'">
                                 <td>{{$index + 1}}</td>
-                                <td>{{result.date}}</td>
+                                <td>{{result.date | amDateFormat: 'L'}}</td>
                                 <td>{{result.protein}}</td>
                                 <td>{{result.carbohydrate}}</td>
                                 <td>{{result.fat}}</td>
