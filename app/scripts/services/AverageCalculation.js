@@ -9,7 +9,7 @@
 
         .factory('MacroAverages', ['NutritionData', function (NutritionData) {
 
-            var averages = NutritionData.query();
+        
 
         }]);
 

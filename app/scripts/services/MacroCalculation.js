@@ -37,10 +37,10 @@
                 return macros;
             };
             
-            var i = 0, values = 0, length = macros.length;
+            
             
             var totals = function () {
-                for (i, values, length; i < length; i += 1) {
+                for (var i = 0, values = 0; i < macros.length; i += 1) {
                     values += macros[i].amount * macros[i].multiplier;
                 }
                 return values;
