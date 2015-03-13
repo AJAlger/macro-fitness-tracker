@@ -9,5 +9,23 @@
         background-color: #3F51B5; }
       .average-page .average-pad section .subtitles {
         font-weight: 300; }
+      .average-page .average-pad section .tCalories {
+        display: inline-block;
+        width: 200px;
+        height: 150px;
+        padding: 8px;
+        margin: 10px 10px 20px; }
+        .average-page .average-pad section .tCalories span {
+          font-weight: 300;
+          text-align: left; }
+        .average-page .average-pad section .tCalories .macros {
+          text-align: center;
+          font-family: Verdana, Geneva, sans-serif;
+          font-size: 2.2em;
+          font-weight: 200;
+          margin: 25px;
+          overflow: hidden; }
+        .average-page .average-pad section .tCalories .total {
+          color: #B71C1C; }
 
 /*# sourceMappingURL=averages.css.map */

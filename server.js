@@ -111,6 +111,6 @@ var express = require('express'),
     // =============LISTEN FOR EVENTS ON 9001 IF RUNNING NODE==================== //
     // Took the listener out because of conflicts with C9 on January 13 2015
 
-    exports = module.exports = app; // This is needed otherwise Mongoose Code will not work
+    module.exports = app; // This is needed otherwise Mongoose Code will not work
 
 }());
