@@ -10,11 +10,7 @@
         .controller('dataAverage', ['$scope', 'NutritionData', function ($scope, NutritionData) {
 
            
-            $scope.averages = NutritionData.query();
 
-            var av = _.indexBy($scope.averages, 'fat');
-
-            console.log(av);
             
         }]);
 
