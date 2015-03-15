@@ -9,7 +9,13 @@ Nutrition.aggregate([
         paverage: {$avg: '$protein'},
         caverage: {$avg: '$carbohydrates'},
         faverage: {$avg: '$fat'}
+            }
+        }
+    ], function(err, result) {
+        if(err) {
+            console.log(err);
+            return;
+        }
+        console.log(result);
 
-         }
-    }
-]);
+});

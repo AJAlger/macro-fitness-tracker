@@ -9,6 +9,7 @@ var express = require('express'),
         methodoverride = require('method-override'),
         errorHandler = require('errorhandler'),
         morgan = require('morgan'),
+        //routes = require('app/routes/routes'),
         Nutrition = require('./app/routes/mongo.js');
 
 // =========================CONFIGURATION===========================//
@@ -105,8 +106,9 @@ var express = require('express'),
                 });
         });
 
+
     // =============WHERE TO ACCESS THE API==================== //
-    app.use('/data', router);
+    app.use('/', router);
 
     // =============LISTEN FOR EVENTS ON 9001 IF RUNNING NODE==================== //
     // Took the listener out because of conflicts with C9 on January 13 2015
