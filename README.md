@@ -7,7 +7,8 @@ This projects uses my [*angular-shooters*](https://github.com/AbdullahAlger/angu
 This application calculates your daily caloric intake and macronutrients to provide you with a daily (and ongoing) progress report for tracking all of your nutrition goals. It uses D3.js to provide you with a visual chart of your progress as you insert your calculations. It is similar to the tracking that you might see on Bodybuilding.com's fitness database or through Fitness Pal. However, this tracker will show you your macronutrient calculations visually in conjunction with your weight and caloric data in order to make the necessary adjustments you will need on your fitness journey.
 
 ###Update
-Everything is done except the integration of D3. It is currently available to experiment with @ [NgUTRITION Tracker](https://ancient-oasis-6900.herokuapp.com/) on Heroku. The divs do not collapse into separate blocks when resizing. This will be fixed.  
+- Everything is done except the integration of D3. It is currently available to experiment with @ [NgUTRITION Tracker](https://ancient-oasis-6900.herokuapp.com/) on Heroku. The divs do not collapse into separate blocks when resizing. This will be fixed.
+- Working on the aggregate for getting averages
 
 ##LICENSE
 
