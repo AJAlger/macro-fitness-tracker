@@ -8,9 +8,14 @@
         .factory('NutritionData', ['$resource', function ($resource) {
 
             return $resource('nutrition/:_id', { _id: '@_id' }, {
-                
-             
+
+
             });
+
+
+
+
+
 
         }]);
 

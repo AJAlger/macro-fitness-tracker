@@ -9,13 +9,13 @@
         .controller('dataShow', ['$scope', 'NutritionData', function ($scope, NutritionData) {
 
             $scope.results = NutritionData.query();
-        
+
              // Make a delete button here.
             $scope.deleteRecord = function (macro) {
                 NutritionData.delete(macro);
                 _.remove($scope.results, macro);
             };
-            
-     
+
+
         }]);
 }());

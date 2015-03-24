@@ -9,7 +9,6 @@ var express = require('express'),
         methodoverride = require('method-override'),
         errorHandler = require('errorhandler'),
         morgan = require('morgan'),
-        //routes = require('app/routes/routes'),
         Nutrition = require('./app/routes/mongo.js');
 
 // =========================CONFIGURATION===========================//
@@ -28,12 +27,38 @@ var express = require('express'),
 
     mongoose.connect('mongodb://test:123456@ds029831.mongolab.com:29831/macronutrients',
             function (err) {
-            if (err) {
-                console.log('Connection error: ', err);
-            } else {
-                console.log('Connection successful');
+                if (err) {
+                    console.log('Connection Error: ', err);
+                } else {
+                    console.log('Connection Successful');
+                }
+
+            //    var averages = function (macro) {
+            //        Nutrition.aggregate([
+            //            {
+            //                $match: {
+            //                    _id: macro
+            //                }
+            //            },
+            //            {
+            //                $group: {
+            //                    macroAvg: {$avg: '$protein'}
+            //                }
+            //            }
+            //        ], function (err, result) {
+            //            if (err) {
+            //                console.log(err);
+            //                return;
+            //            }
+            //            console.log(result);
+            //
+            //        });
+            //    };
+            //
+            //    console.log(averages);
             }
-        });
+    );
+
 
 // ==========================ROUTER=================================//
 // =================================================================//

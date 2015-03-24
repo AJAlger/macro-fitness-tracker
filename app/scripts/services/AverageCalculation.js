@@ -9,6 +9,7 @@
 
         .factory('MacroAverages', ['NutritionData', function (NutritionData) {
 
+
         
 
         }]);

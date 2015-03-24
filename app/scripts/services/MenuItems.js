@@ -12,7 +12,7 @@
             var menuItems = [
                 {'label': 'Introduction', 'location': 'index'},
                 {'label': 'Macronutrients', 'location': 'data'},
-                {'label': 'Averages', location: 'averages'},
+                //{'label': 'Averages', location: 'averages'},
                 {'label': 'Summary', 'location': 'summary'}
             ];
 

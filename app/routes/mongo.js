@@ -9,5 +9,5 @@ var NutritionSchema = new Schema({
     fat: Number
 });
 
-
 module.exports = mongoose.model('Nutrition', NutritionSchema);
+
