@@ -19,7 +19,8 @@
                     })
                     .state('data', {
                         url: '/macronutrients',
-                        templateUrl: 'views/_dataAdd.html'
+                        templateUrl: 'views/_dataAdd.html',
+                        controller: 'dataAdd'
                     })
                     .state('averages', {
                         url: '/averages',
@@ -27,7 +28,8 @@
                     })
                     .state('summary', {
                         url: '/summary',
-                        templateUrl: 'views/_dataGraphs.html'
+                        templateUrl: 'views/_dataGraphs.html',
+                        controller: 'dataShow'
                     });
             }]);
 

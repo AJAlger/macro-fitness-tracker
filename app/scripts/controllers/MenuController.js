@@ -3,15 +3,21 @@
 
     angular.module('NutritionTracker')
 
-        .controller('MenuBar', ['$scope', '$mdSidenav', 'MenuItems', function ($scope, $mdSidenav, MenuItems) {
+        .controller('MenuBar', MenuBar);
 
-            $scope.items = MenuItems.items();
+        MenuBar.$inject = ['$mdSidenav', 'MenuItems'];
 
-            $scope.openMenu = function () {
+        function MenuBar($mdSidenav, MenuItems) {
+
+            var vm = this;
+
+            vm.lists = MenuItems.items();
+
+            vm.openMenu = function () {
                 $mdSidenav('left').toggle();
             };
 
-        }]);
+        }
 
 
 }());

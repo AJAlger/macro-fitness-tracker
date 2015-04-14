@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="stylesheets/css/main.css" />
 
 </head>
-<body layout="row">
+<body layout="row" ng-controller="MenuBar as menuVm">
 
 <md-sidenav class="md-sidenav-left md-whiteframe-z2 " md-component-id="left" md-is-locked-open="$media('gt-md')">
     <md-toolbar md-theme="indigo">
         <h2 class="md-toolbar-tools">Menu</h2>
     </md-toolbar>
-    <md-content ng-controller="MenuBar" md-theme="indigo">
-        <md-button layout-align="left" ng-repeat="item in items" ui-sref="{{item.location}}" class="menu-item"
+    <md-content  md-theme="indigo">
+        <md-button layout-align="left" ng-repeat="item in menuVm.lists" ui-sref="{{item.location}}" class="menu-item"
            md-ink-ripple="#bbb" aria-hidden="false">
             <span>{{item.label}}</span>
         </md-button>
@@ -31,8 +31,8 @@
 <div class="container" layout="column" role="main" layout-fill md-theme="indigo">
     <md-toolbar class="md-header top-bar">
         <div class="md-toolbar-tools">
-            <div layout="row" flex aria-label="Toggle Menu" ng-controller="MenuBar">
-                <i class="fa fa-bars fa-lg" hide-gt-md ng-click="openMenu()"></i>
+            <div layout="row" flex aria-label="Toggle Menu">
+                <i class="fa fa-bars fa-lg" hide-gt-md ng-click="menuVm.openMenu()"></i>
                 <div class="bar-title">NgUTRITION Tracker</div>
             </div>
         </div>
