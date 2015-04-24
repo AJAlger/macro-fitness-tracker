@@ -2,63 +2,60 @@
  * Created by Abdullah-Mac on 3/15/15.
  */
 
+var Nutrition = require('./mongo.js');
 
 
-router.route('/nutrition')
+exports.macroSend = function(req, res){
 
-    // ===========POST INFORMATION====================== //
-    .post(function (request, response) {
-        var macro = new Nutrition();
-        macro.date = request.body.date;
-        macro.protein = request.body.protein;
-        macro.carbohydrate = request.body.carbohydrate;
-        macro.fat = request.body.fat;
+    var macro = new Nutrition();
+    macro.date = req.body.date;
+    macro.protein = req.body.protein;
+    macro.carbohydrate = req.body.carbohydrate;
+    macro.fat = req.body.fat;
 
-        macro.save(function (err) {
-            if (err) {
-                response.send(err);
-            }
-            response.json({ message: "Information sent!"});
+    macro.save(function (err) {
+        if (err) {
+            res.send(err);
+        }
+        res.json({ message: "Information sent!"});
 
-        });
-
-    })
-
-    // ===========ACCESS INFORMATION====================== //
-    .get(function (request, response) {
-        Nutrition.find(function (err, nutritionInformation) {
-            if (err) {
-                response.send(err);
-            }
-
-            response.json(nutritionInformation);
-
-        });
     });
+
+};
+
+exports.macroGetAll = function(req, res) {
+    Nutrition.find(function (err, nutritionInformation) {
+        if (err) {
+            res.send(err);
+        }
+
+        res.json(nutritionInformation);
+
+    });
+};
 
 // =========NEW ROUTE TO ACCESS INDIVIDUAL ITEMS======================== //
 
-router.route('/nutrition/:_id')
+//router.route('/nutrition/:_id')
 
-    // ===========ACCESS INFORMATION====================== //
-    .get(function (request, response) {
-        Nutrition.findById(request.params._id, function (err, macro) {
+exports.macroGet = function(req, res) {
+    Nutrition.findById(req.params._id, function (err, macro) {
+        if (err) {
+            res.send(err);
+        }
+        res.json(macro);
+
+    });
+};
+
+exports.macroDelete = function(req, res) {
+    Nutrition.remove({_id: req.params._id},
+        function (err) {
             if (err) {
-                response.send(err);
+                res.send(err);
             }
-            response.json(macro);
+            res.json({message: "Successfully deleted"});
 
         });
-    })
+};
 
-    // ==============DELETE INFORMATION=================== //
-    .delete(function (request, response) {
-        Nutrition.remove({_id: request.params._id},
-            function (err, macro) {
-                if (err) {
-                    response.send(err);
-                }
-                response.json({message: "Successfully deleted"});
-
-            });
-    });

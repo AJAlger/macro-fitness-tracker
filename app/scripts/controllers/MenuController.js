@@ -5,8 +5,6 @@
 
         .controller('MenuBar', MenuBar);
 
-        MenuBar.$inject = ['$mdSidenav', 'MenuItems'];
-
         function MenuBar($mdSidenav, MenuItems) {
 
             var vm = this;

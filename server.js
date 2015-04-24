@@ -9,7 +9,7 @@ var express = require('express'),
         methodoverride = require('method-override'),
         errorHandler = require('errorhandler'),
         morgan = require('morgan'),
-        Nutrition = require('./app/routes/mongo.js');
+        routes = require('./app/routes/routes.js');
 
 // =========================CONFIGURATION===========================//
 // =================================================================//
@@ -66,77 +66,13 @@ var express = require('express'),
     var router = express.Router();
 // ================================= //
 
-// NEED A LOGIN PAGE ROUTE HERE
-
-
-// ================================= //
-
-// ACCESS THE MAIN ROUTE FOR THE INFORMATION PASSED AND ACCESSED
-    router.route('/nutrition')
-
-    // ===========POST INFORMATION====================== //
-        .post(function (request, response) {
-            var macro = new Nutrition();
-            macro.date = request.body.date;
-            macro.protein = request.body.protein;
-            macro.carbohydrate = request.body.carbohydrate;
-            macro.fat = request.body.fat;
-
-            macro.save(function (err) {
-                if (err) {
-                    response.send(err);
-                }
-                    response.json({ message: "Information sent!"});
-
-            });
-
-        })
-
-        // ===========ACCESS INFORMATION====================== //
-        .get(function (request, response) {
-            Nutrition.find(function (err, nutritionInformation) {
-                if (err) {
-                    response.send(err);
-                }
-
-                    response.json(nutritionInformation);
-
-            });
-        });
-
-        // =========NEW ROUTE TO ACCESS INDIVIDUAL ITEMS======================== //
-
-    router.route('/nutrition/:_id')
-
-        // ===========ACCESS INFORMATION====================== //
-        .get(function (request, response) {
-            Nutrition.findById(request.params._id, function (err, macro) {
-                if (err) {
-                    response.send(err);
-                }
-                    response.json(macro);
-
-            });
-        })
-
-        // ==============DELETE INFORMATION=================== //
-        .delete(function (request, response) {
-            Nutrition.remove({_id: request.params._id},
-                    function (err, macro) {
-                    if (err) {
-                        response.send(err);
-                    }
-                        response.json({message: "Successfully deleted"});
-
-                });
-        });
-
+    router.post('/nutrition', routes.macroSend);
+    router.get('/nutrition', routes.macroGetAll);
+    router.get('/nutrition/:_id', routes.macroGet);
+    router.delete('/nutrition/:_id', routes.macroDelete);
 
     // =============WHERE TO ACCESS THE API==================== //
     app.use('/', router);
-
-    // =============LISTEN FOR EVENTS ON 9001 IF RUNNING NODE==================== //
-    // Took the listener out because of conflicts with C9 on January 13 2015
 
     module.exports = app; // This is needed otherwise Mongoose Code will not work
 

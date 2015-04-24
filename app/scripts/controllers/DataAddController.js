@@ -16,6 +16,8 @@
                 var newMacro = new NutritionData();
                 
                 newMacro.date = $scope.date;
+
+                console.log(newMacro.date);
                 
                 for (var key in $scope.macros) {
                     var thisMacro = {};
