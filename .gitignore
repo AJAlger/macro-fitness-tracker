@@ -5,3 +5,4 @@ node_modules
 app/stylesheets/scss/base
 .sass-cache/
 .idea
+build
