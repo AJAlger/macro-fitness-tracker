@@ -20,7 +20,8 @@
                     .state('data', {
                         url: '/macronutrients',
                         templateUrl: 'views/_dataAdd.html',
-                        controller: 'dataAdd'
+                        controller: 'dataAdd',
+                        controllerAs: 'vm'
                     })
                     .state('averages', {
                         url: '/averages',

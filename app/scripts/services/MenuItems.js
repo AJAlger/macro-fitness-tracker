@@ -7,7 +7,9 @@
     angular.module('NutritionTracker')
 
         // Factory to produce menu items
-        .factory('MenuItems', [function () {
+        .factory('MenuItems', MenuItems);
+
+        function MenuItems() {
 
             var menuItems = [
                 {'label': 'Introduction', 'location': 'index'},
@@ -24,5 +26,5 @@
                 items: getMenuItems
             };
 
-        }]);
+        }
 }());

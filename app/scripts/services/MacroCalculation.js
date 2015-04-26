@@ -7,7 +7,9 @@
     angular.module('NutritionTracker')
 
         // Factory to do the calculations on the calorie page
-        .factory('MacroCalculation', [function () {
+        .factory('MacroCalculation', MacroCalculation);
+
+        function MacroCalculation() {
 
             var macros = [
                 {
@@ -53,5 +55,5 @@
                 totals: getTotals
             };
 
-        }]);
+        }
 }());

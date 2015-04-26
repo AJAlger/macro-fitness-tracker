@@ -6,29 +6,33 @@
 
     angular.module('NutritionTracker')
 
-        .controller('dataAdd', ['$scope', 'MacroCalculation', 'NutritionData', function ($scope, MacroCalculation, NutritionData) {
-            
-            $scope.macros = MacroCalculation.macros();
-            $scope.totals = MacroCalculation.totals();
+        .controller('dataAdd', dataAdd);
+
+            function dataAdd(MacroCalculation, NutritionData) {
+
+                var vm = this;
+
+                vm.macros = MacroCalculation.macros();
+                vm.totals = MacroCalculation.totals();
 
             // Add new macro information 
-            $scope.addMacro = function () {
-                var newMacro = new NutritionData();
+                vm.addMacro = function() {
+                    var newMacro = new NutritionData();
                 
-                newMacro.date = $scope.date;
+                    newMacro.date = vm.date;
 
-                console.log(newMacro.date);
+                    console.log(newMacro.date);
                 
-                for (var key in $scope.macros) {
-                    var thisMacro = {};
-                    thisMacro = $scope.macros[key].total();
-                    newMacro[$scope.macros[key].type] = thisMacro;
+                    for (var key in vm.macros) {
+                        var thisMacro = {};
+                        thisMacro = vm.macros[key].total();
+                        newMacro[vm.macros[key].type] = thisMacro;
+                    }
 
-                }
+                    newMacro.$save();
                 
-                newMacro.$save();
-                
-            };
-           
-        }]);
+                };
+
+
+        }
 }());

@@ -34,7 +34,6 @@
     "gulp-uglify": "^1.0.2",
     "method-override": "^2.3.0",
     "moment": "^2.8.4",
-    "mongoose": "^3.8.21",
     "morgan": "^1.5.1",
     "node-bourbon": "^1.2.3",
     "node-neat": "^1.4.2",
@@ -42,6 +41,7 @@
     "serve-static": "^1.7.1"
   },
   "devDependencies": {
-    "gulp-ng-annotate": "^0.5.2"
+    "gulp-ng-annotate": "^0.5.2",
+    "mongoose": "^4.0.2"
   }
 }

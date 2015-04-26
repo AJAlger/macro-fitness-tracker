@@ -5,12 +5,14 @@
     'use strict';
 
     angular.module('NutritionTracker')
-        .factory('NutritionData', ['$resource', function ($resource) {
+        .factory('NutritionData', NutritionData);
+
+        function NutritionData($resource) {
 
             return $resource('nutrition/:_id', { _id: '@_id' }, {
 
             });
 
-        }]);
+        }
 
 }());
