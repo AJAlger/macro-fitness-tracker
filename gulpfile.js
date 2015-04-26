@@ -46,19 +46,20 @@ var gulp = require('gulp'),
 // Gulp Task to Check and Uglify Scripts
 // Plumber Checks for Errors
     gulp.task('scripts', function () {
-        return gulp.src(paths.script + '*.js') // Path to Script folder
+        return gulp.src(paths.script + '**/*.js') // Path to Script folder
             .pipe(plumber()) // Checks for any errors and notifies if there are
+            .pipe(ngAnnotate())
             .pipe(sourcemaps.init())
             .pipe(uglify())// Makes all scripts into a single line for minimizing file size
             .pipe(sourcemaps.write())
-            .pipe(gulp.dest(paths.script + '/minjs')) // Puts files into and creates new Minjs folder
+            .pipe(gulp.dest('./build/scripts')) // Puts files into and creates new Minjs folder
             .pipe(livereload()); // Reloading Gulp each time a change has been made
     });
 
     // Watching Folders and Files for Changes
     gulp.task('watch', function () {
         livereload.listen(); // Livereload is loaded
-        gulp.watch(paths.script + '*.js', ['scripts']); // Watching Scripts folder
+        gulp.watch(paths.script + '**/*.js', ['scripts']); // Watching Scripts folder
         gulp.watch(paths.sass + '*.scss', ['styles']); // Watching Stylesheets folder
     });
 
