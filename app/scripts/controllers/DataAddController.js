@@ -8,31 +8,12 @@
 
         .controller('dataAdd', dataAdd);
 
-            function dataAdd(MacroCalculation, NutritionData) {
+            function dataAdd(MacroCalculation, AddMacros) {
 
                 var vm = this;
-
                 vm.macros = MacroCalculation.macros();
                 vm.totals = MacroCalculation.totals();
+                vm.addMacro = AddMacros.saveMacro();
 
-            // Add new macro information 
-                vm.addMacro = function() {
-                    var newMacro = new NutritionData();
-                
-                    newMacro.date = vm.date;
-
-                    console.log(newMacro.date);
-                
-                    for (var key in vm.macros) {
-                        var thisMacro = {};
-                        thisMacro = vm.macros[key].total();
-                        newMacro[vm.macros[key].type] = thisMacro;
-                    }
-
-                    newMacro.$save();
-                
-                };
-
-
-        }
+            }
 }());
