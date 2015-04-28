@@ -6,7 +6,6 @@ var gulp = require('gulp'),
         uglify = require('gulp-uglify'),
         livereload = require('gulp-livereload'),
         plumber = require('gulp-plumber'),
-        neat = require('node-neat').includePaths,
         sourcemaps = require('gulp-sourcemaps'),
         myApp = require('./server.js'),
         ngAnnotate = require('gulp-ng-annotate');
@@ -36,7 +35,7 @@ var gulp = require('gulp'),
     gulp.task('styles', function () {
         return gulp.src(paths.sass + '*.scss') // Path to Stylesheets folder and files
             .pipe(plumber()) // Checks for any errors and notifies if there are
-            .pipe(sass({loadPath: ['styles'].concat(neat)})) // Loading Bourbon and Neat
+            .pipe(sass()) // Loading Bourbon and Neat
             // loadPath when using gulp-ruby-sass must be used
             // instead of includePaths when using gulp-sass
             .pipe(gulp.dest(paths.css)) // CSS destination where it is expanded

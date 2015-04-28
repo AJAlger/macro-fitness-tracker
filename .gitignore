@@ -6,3 +6,4 @@ app/stylesheets/scss/base
 .sass-cache/
 .idea
 build
+app/stylesheets/scss/bourbon

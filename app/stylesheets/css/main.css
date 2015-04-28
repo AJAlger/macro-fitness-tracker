@@ -45,7 +45,7 @@
             text-align: left; }
           .add-page .form-pad section div.calorieContainer .tCalories .macros {
             text-align: center;
-            font-family: Verdana, Geneva, sans-serif;
+            font-family: "Verdana", "Geneva", sans-serif;
             font-size: 2em;
             font-weight: 200;
             margin: 25px;
@@ -67,7 +67,7 @@ button {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   font-size: 1em;
   font-weight: 600;
   line-height: 1;
@@ -131,7 +131,7 @@ body {
   font-feature-settings: "kern", "liga", "pnum";
   -webkit-font-smoothing: antialiased;
   color: #333;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   font-size: 1em;
   line-height: 1.5; }
 
@@ -141,7 +141,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   font-size: 1em;
   line-height: 1.2;
   margin: 0 0 0.75em; }
@@ -218,7 +218,7 @@ picture {
           text-align: left; }
         .average-page .average-pad section .tCalories .macros {
           text-align: center;
-          font-family: Verdana, Geneva, sans-serif;
+          font-family: "Verdana", "Geneva", sans-serif;
           font-size: 2.2em;
           font-weight: 200;
           margin: 25px;
@@ -226,7 +226,7 @@ picture {
         .average-page .average-pad section .tCalories .total {
           color: #B71C1C; }
 
-@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+@media screen and (max-width: 760px) {
   table, thead, tbody, th, td, tr {
     display: block; }
 
