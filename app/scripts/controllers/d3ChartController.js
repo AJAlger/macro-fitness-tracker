@@ -4,12 +4,12 @@
 
     angular.module('NutritionTracker')
       
-         .controller('d3Controller', ['$scope', 'macroGraph', function($scope, macroGraph) {
-          
-          
-          
-          
-        }]);
+         .controller('d3Controller', d3Controller);
+
+  function d3Controller(macroGraph) {
+
+
+  }
       
 
 }());
