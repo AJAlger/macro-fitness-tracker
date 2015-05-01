@@ -9,7 +9,7 @@ var express = require('express'),
         methodoverride = require('method-override'),
         errorHandler = require('errorhandler'),
         morgan = require('morgan'),
-        routes = require('./app/routes/routes.js');
+        routes = require('./server/routes/routes.js');
 
 // =========================CONFIGURATION===========================//
 // =================================================================//

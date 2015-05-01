@@ -15,21 +15,21 @@
                 $stateProvider
                     .state('index', {
                         url: '/',
-                        templateUrl: 'views/_landing.html'
+                        templateUrl: '../views/_landing.html'
                     })
                     .state('data', {
                         url: '/macronutrients',
-                        templateUrl: 'views/_dataAdd.html',
+                        templateUrl: '../views/_dataAdd.html',
                         controller: 'dataAdd',
                         controllerAs: 'vm'
                     })
                     .state('averages', {
                         url: '/averages',
-                        templateUrl: 'views/_dataAverage.html'
+                        templateUrl: '../views/_dataAverage.html'
                     })
                     .state('summary', {
                         url: '/summary',
-                        templateUrl: 'views/_dataGraphs.html',
+                        templateUrl: '../views/_dataGraphs.html',
                         controller: 'dataShow'
                     });
             }]);

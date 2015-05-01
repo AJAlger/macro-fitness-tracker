@@ -18,7 +18,7 @@ var gulp = require('gulp'),
     var paths = {
         sass: 'app/stylesheets/scss/', // Stylesheets folder for SASS
         css: 'app/stylesheets/css/', // Stylesheets folder for CSS
-        script: 'app/scripts/' // Scripts folder for JS files
+        script: 'app/macros' // Scripts folder for JS files
     };
 
 // Default Loader for Gulp with all tasks loaded
@@ -51,7 +51,7 @@ var gulp = require('gulp'),
             .pipe(sourcemaps.init())
             .pipe(uglify())// Makes all scripts into a single line for minimizing file size
             .pipe(sourcemaps.write())
-            .pipe(gulp.dest('./build/scripts')) // Puts files into and creates new Minjs folder
+            .pipe(gulp.dest('/build/macros')) // Puts files into and creates new Minjs folder
             .pipe(livereload()); // Reloading Gulp each time a change has been made
     });
 
