@@ -10,12 +10,13 @@ This application calculates your daily caloric intake and macronutrients to prov
 - Everything is done except the integration of D3. It is currently available to experiment with @ [NgUTRITION Tracker](https://ancient-oasis-6900.herokuapp.com/) on Heroku. The divs do not collapse into separate blocks when resizing. This will be fixed.
 - Working on the aggregate for getting averages
 - Rewriting Angular code in preparation for 1.4
+- I am updating the project to handle negative numbers. (Feb 13, 2016)
 
 ##LICENSE
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Abdullah J. Alger
+Copyright (c) 2016 Abdullah J. Alger
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

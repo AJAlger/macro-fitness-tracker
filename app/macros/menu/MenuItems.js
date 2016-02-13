@@ -5,7 +5,6 @@
     'use strict';
 
     angular.module('NutritionTracker')
-
         // Factory to produce menu items
         .factory('MenuItems', MenuItems);
 

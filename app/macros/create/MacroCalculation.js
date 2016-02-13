@@ -14,21 +14,21 @@
             var macros = [
                 {
                     'type': 'protein',
-                    'amount': null,
+                    'amount': 0,
                     'multiplier': 4,
                     'tip': 'Calories per gram of protein',
                     'total': function () { return this.amount * this.multiplier; }
                 },
                 {
                     'type': 'carbohydrate',
-                    'amount': null,
+                    'amount': 0,
                     'multiplier': 4,
                     'tip': 'Calories per gram of carbohydrate',
                     'total': function () { return this.amount * this.multiplier; }
                 },
                 {
                     'type': 'fat',
-                    'amount': null,
+                    'amount': 0,
                     'multiplier': 9,
                     'tip': 'Calories per gram of fat',
                     'total': function () { return this.amount * this.multiplier; }
@@ -41,7 +41,11 @@
 
             var totals = function () {
                 for (var i = 0, values = 0; i < macros.length; i += 1) {
-                    values += macros[i].amount * macros[i].multiplier;
+                    if (macros[i].amount >= 0) {
+                        values += macros[i].amount * macros[i].multiplier;
+                    } else {
+                        macros[i].amount = null;
+                    }
                 }
                 return values;
             };
