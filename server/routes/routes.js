@@ -2,8 +2,24 @@
  * Created by Abdullah-Mac on 3/15/15.
  */
 
-var Nutrition = require('./mongo.js');
+var Nutrition = require('..//models/macro.server.model.js');
+var User = require('../models/user.server.model.js');
 
+
+exports.createUser = function(req, res, next) {
+    var user = new User(req.body);
+    user.save(function(err) {
+        if (err) {
+            return next(err);
+        } 
+        res.json(user);
+       
+    });
+}
+
+exports.login = function(req, res) {
+    
+};
 
 exports.macroSend = function(req, res){
 

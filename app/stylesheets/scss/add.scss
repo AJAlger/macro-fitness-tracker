@@ -22,10 +22,14 @@
         .subtitles {
           font-weight: 300;
         }
+        
+        .datepickersettings md-content {
+            padding-bottom: 200px;
+        }
 
         .row {
 
-          md-input-group label {
+          md-input-container label {
             font-size: 0.9em;
 
           }

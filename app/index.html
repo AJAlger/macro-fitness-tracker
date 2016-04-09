@@ -6,20 +6,18 @@
     <title>NgUTRITION Tracker</title>
     <!------ STYLESHEETS ------>
 
-    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
-    <link rel="stylesheet" href="../bower_components/angular-material/themes/indigo-theme.css" />
-    <link rel="stylesheet" href="../bower_components/fontawesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="../bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="../node_modules/animate.css/animate.css" />
     <link rel="stylesheet" href="stylesheets/css/main.css" />
 
 </head>
 <body layout="row" ng-controller="MenuBar as menuVm">
 
-<md-sidenav class="md-sidenav-left md-whiteframe-z2 " md-component-id="left" md-is-locked-open="$media('gt-md')">
-    <md-toolbar md-theme="indigo">
+<md-sidenav class="md-sidenav-left md-whiteframe-z2 " md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+    <md-toolbar >
         <h2 class="md-toolbar-tools">Menu</h2>
     </md-toolbar>
-    <md-content  md-theme="indigo">
+    <md-content  >
         <md-button layout-align="left" ng-repeat="item in menuVm.lists" ui-sref="{{item.location}}" class="menu-item"
            md-ink-ripple="#bbb" aria-hidden="false">
             <span>{{item.label}}</span>
@@ -28,7 +26,7 @@
 </md-sidenav>
 
 
-<div class="container" layout="column" role="main" layout-fill md-theme="indigo">
+<div class="container" layout="column" role="main" layout-fill >
     <md-toolbar class="md-header top-bar">
         <div class="md-toolbar-tools">
             <div layout="row" flex aria-label="Toggle Menu">
@@ -44,17 +42,19 @@
 
 
 <!------ SCRIPTS ------>
-<script src="../bower_components/hammerjs/hammer.js"></script>
-<script src="../bower_components/angular/angular.js"></script>
-<script src="../bower_components/lodash/dist/lodash.js"></script>
-<script src="../bower_components/d3/d3.min.js"></script>
-<script src="../bower_components/moment/moment.js"></script>
-<script src="../bower_components/angular-moment/angular-moment.min.js"></script>
-<script src="../bower_components/angular-resource/angular-resource.js"></script>
-<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="../bower_components/angular-material/angular-material.js"></script>
-<script src="../bower_components/angular-aria/angular-aria.js"></script>
-<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/d3/d3.min.js"></script>
+<script src="../node_modules/lodash/lodash.js"></script>
+<script src="../node_modules/moment/moment.js"></script>
+<script src="../node_modules/angular-moment/angular-moment.min.js"></script>
+<script src="../node_modules/angular-resource/angular-resource.js"></script>
+<script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../node_modules/angular-material/angular-material.js"></script>
+<script src="../node_modules/angular-messages/angular-messages.js"></script>
+<script src="../node_modules/angular-animate/angular-animate.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+<script src="../node_modules/angular-aria/angular-aria.js"></script>
+<script src="../node_modules/angular-animate/angular-animate.js"></script>
 
 <script src="app.js"></script>
 

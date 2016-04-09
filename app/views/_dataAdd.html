@@ -6,33 +6,33 @@
                     <span>Enter Daily Macronutrients</span>
                 </div>
             </md-toolbar>
-            <md-content md-theme="indigo" class="md-padding">
+            <md-content class="md-padding">
                 <form ng-submit="vm.addMacro()">
                     <h3 class="subtitles">Date</h3>
-                    <div class="row" layout="column">
-                        <md-text-float
-                                md-theme="indigo"
-                                type="date"
-                                ng-model="vm.date">date = {{date | date: "MM-dd-YYYY"}}</md-text-float>
-                    </div>
+                       <div class="calendar">
+                            <md-datepicker
+                                    md-placeholder="Enter date"
+                                    ng-model="vm.date">
+                            </md-datepicker>
+                       </div>
                     <h3 class="subtitles">Enter Daily Macros in Grams</h3>
 
                         <div class="row" layout="row">
-                       <md-text-float ng-repeat="macro in vm.macros"
-                                      md-theme="indigo"
-                                      label="{{macro.type}}"
-                                      type="number"
-                                      ng-model="macro.amount"
-                                      min="0">
-                       </md-text-float>
+                       <md-input-container ng-repeat="macro in vm.macros">
+                           <label>{{macro.type}}</label>
+                           <input type="number" ng-model="macro.amount" name="amount" minlength="1" maxlength="4" />
+                           <div ng-messages="macro.amount.$error" role="alert">
+                                <div ng-message-exp="['required', 'min', 'max', 'minlength', 'maxlength']">
+                                    Your amount must be above 0 and below 500.
+                                </div>
+                           </div>   
+                       </md-input-container>
                     </div>
 
-                    <md-button
-                               class="md-primary submitMacros md-raised"
-                               md-theme="indigo">Submit</md-button>
+                    <md-button type="submit" class="md-primary submitMacros md-raised">Submit</md-button>
                 </form>
             </md-content>
-            <md-content md-theme="indigo" class="md-padding total-macros">
+            <md-content  class="md-padding total-macros">
                 <md-divider></md-divider>
                 <h3 class="subtitles">Total Calories from Macronutrients</h3>
                 <div class="calorieContainer" layout="row" layout-align="center center">
