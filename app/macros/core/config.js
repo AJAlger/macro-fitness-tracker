@@ -11,7 +11,6 @@
 
                 $urlRouterProvider.otherwise('/');
 
-        // STATES
                 $stateProvider
                     .state('index', {
                         url: '/',
@@ -31,6 +30,20 @@
                         url: '/summary',
                         templateUrl: '../views/_dataGraphs.html',
                         controller: 'dataShow'
+                    })
+                    .state('login', {
+                        url: '/login',
+                        templateUrl: '../authentication/login.html',
+                        controller: 'loginController'
+                    })
+                    .state('logout', {
+                        url: '/logout',
+                        controller: 'logoutController'
+                    })
+                    .state('register', {
+                        url: '/register',
+                        templateUrl: '../authentication/register.html',
+                        controller: 'registrationController'
                     });
             }]);
 
