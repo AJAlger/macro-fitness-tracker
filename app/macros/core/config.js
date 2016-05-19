@@ -34,16 +34,20 @@
                     .state('login', {
                         url: '/login',
                         templateUrl: '../authentication/login.html',
-                        controller: 'loginController'
+                        controller: 'loginController',
+                        controllerAs: 'vm'
+
                     })
                     .state('logout', {
                         url: '/logout',
-                        controller: 'logoutController'
+                        controller: 'logoutController',
+                        controllerAs: 'vm'
                     })
                     .state('register', {
                         url: '/register',
                         templateUrl: '../authentication/register.html',
-                        controller: 'registrationController'
+                        controller: 'registrationController',
+                        controllerAs: 'vm'
                     });
             }]);
 

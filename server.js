@@ -19,7 +19,11 @@ var express = require('express'),
 
 // =========================CONFIGURATION===========================//
 // =================================================================//
-app.use(express.static(__dirname + '/app'));
+
+app.set('views', './server/views');
+app.set('view engine', 'ejs');
+
+app.use(express.static(__dirname + '/server'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
